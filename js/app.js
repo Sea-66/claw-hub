@@ -13,7 +13,8 @@
         filteredProducts: [],
         currentCategory: 'all',
         searchQuery: '',
-        isLoading: true
+        isLoading: true,
+        votes: {} // Store votes { productId: { up: count, down: count, userVote: 'up'|'down'|null } }
     };
 
     // DOM Elements
@@ -36,6 +37,9 @@
         // Initialize theme
         initTheme();
 
+        // Load votes from localStorage
+        loadVotes();
+
         // Load products data
         await loadProducts();
 
@@ -47,6 +51,94 @@
         filterAndRender();
 
         state.isLoading = false;
+    }
+
+    /**
+     * Load votes from localStorage
+     */
+    function loadVotes() {
+        try {
+            const saved = localStorage.getItem('clawhub-votes');
+            if (saved) {
+                state.votes = JSON.parse(saved);
+            }
+        } catch (e) {
+            state.votes = {};
+        }
+    }
+
+    /**
+     * Save votes to localStorage
+     */
+    function saveVotes() {
+        try {
+            localStorage.setItem('clawhub-votes', JSON.stringify(state.votes));
+        } catch (e) {
+            console.error('Failed to save votes:', e);
+        }
+    }
+
+    /**
+     * Get vote data for a product
+     */
+    function getVoteData(productId) {
+        if (!state.votes[productId]) {
+            // Initialize with random votes for demo
+            state.votes[productId] = {
+                up: Math.floor(Math.random() * 100) + 10,
+                down: Math.floor(Math.random() * 20),
+                userVote: null
+            };
+        }
+        return state.votes[productId];
+    }
+
+    /**
+     * Handle vote action
+     */
+    function handleVote(productId, voteType) {
+        const voteData = getVoteData(productId);
+
+        // If user already voted this type, remove the vote
+        if (voteData.userVote === voteType) {
+            voteData[voteType]--;
+            voteData.userVote = null;
+        } else {
+            // If user voted the opposite type, remove that vote first
+            if (voteData.userVote) {
+                voteData[voteData.userVote]--;
+            }
+            // Add new vote
+            voteData[voteType]++;
+            voteData.userVote = voteType;
+        }
+
+        saveVotes();
+
+        // Update UI
+        const voteContainer = document.querySelector(`[data-product-id="${productId}"] .vote-container`);
+        if (voteContainer) {
+            renderVoteButtons(voteContainer, productId);
+        }
+    }
+
+    /**
+     * Render vote buttons
+     */
+    function renderVoteButtons(container, productId) {
+        const voteData = getVoteData(productId);
+        container.innerHTML = `
+            <button class="vote-btn ${voteData.userVote === 'up' ? 'upvoted' : ''}"
+                    onclick="window.ClawHubApp.handleVote('${productId}', 'up')">
+                <span class="vote-icon">👍</span>
+                <span class="vote-count">${voteData.up}</span>
+            </button>
+            <button class="vote-btn ${voteData.userVote === 'down' ? 'downvoted' : ''}"
+                    onclick="window.ClawHubApp.handleVote('${productId}', 'down')">
+                <span class="vote-icon">👎</span>
+                <span class="vote-count">${voteData.down}</span>
+            </button>
+        `;
     }
 
     /**
@@ -215,7 +307,7 @@
     }
 
     /**
-     * Render products grid
+     * Render products list
      */
     function renderProducts() {
         if (state.filteredProducts.length === 0) {
@@ -227,66 +319,66 @@
         elements.emptyState.classList.add('hidden');
 
         elements.productsGrid.innerHTML = state.filteredProducts.map((product, index) => `
-            <div class="product-card bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden fade-in"
-                 style="animation-delay: ${Math.min(index * 50, 500)}ms">
-                <div class="p-5">
-                    <!-- Header -->
-                    <div class="flex items-start justify-between mb-3">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 overflow-hidden flex-shrink-0">
-                                ${product.icon
-                                    ? `<img src="${product.icon}" alt="${product.name}" class="w-8 h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-2xl hidden items-center justify-center">🦞</span>`
-                                    : `<span class="text-2xl">🦞</span>`
-                                }
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 dark:text-white">${product.name}</h3>
-                                ${product.company ? `<p class="text-xs text-gray-500 dark:text-gray-400">${product.company}</p>` : ''}
-                            </div>
+            <div class="product-bar bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-4 fade-in type-${product.type}"
+                 data-product-id="${product.id}"
+                 style="animation-delay: ${Math.min(index * 30, 300)}ms">
+                <div class="flex items-center gap-4">
+                    <!-- Vote Buttons -->
+                    <div class="vote-container flex flex-col items-center gap-1 flex-shrink-0">
+                        <!-- Vote buttons will be rendered here -->
+                    </div>
+
+                    <!-- Icon -->
+                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 overflow-hidden flex-shrink-0">
+                        ${product.icon
+                            ? `<img src="${product.icon}" alt="${product.name}" class="w-8 h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-2xl hidden items-center justify-center">🦞</span>`
+                            : `<span class="text-2xl">🦞</span>`
+                        }
+                    </div>
+
+                    <!-- Info -->
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <h3 class="font-bold text-gray-900 dark:text-white">${product.name}</h3>
+                            ${product.company ? `<span class="text-xs text-gray-500 dark:text-gray-400">· ${product.company}</span>` : ''}
+                            ${product.stars ? `<span class="text-xs text-yellow-500">⭐ ${product.stars}</span>` : ''}
+                            ${product.status ? `<span class="text-xs px-2 py-0.5 rounded-full ${getStatusClass(product.status)}">${product.status}</span>` : ''}
                         </div>
-                        ${product.stars ? `
-                            <span class="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                                ⭐ ${product.stars}
-                            </span>
-                        ` : ''}
+                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 line-clamp-1">
+                            ${product.description || '暂无描述'}
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mt-2">
+                            ${getProductTypeTag(product)}
+                            ${(product.tags || []).slice(0, 4).map(tag => `
+                                <span class="tag px-2 py-0.5 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
+                                    ${tag}
+                                </span>
+                            `).join('')}
+                        </div>
                     </div>
 
-                    <!-- Description -->
-                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
-                        ${product.description || '暂无描述'}
-                    </p>
-
-                    <!-- Tags -->
-                    <div class="flex flex-wrap gap-1.5 mb-4">
-                        ${getProductTypeTag(product)}
-                        ${(product.tags || []).slice(0, 3).map(tag => `
-                            <span class="tag px-2 py-0.5 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
-                                ${tag}
-                            </span>
-                        `).join('')}
-                    </div>
-
-                    <!-- Footer -->
-                    <div class="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700">
-                        ${product.status ? `
-                            <span class="text-xs px-2 py-1 rounded-full ${getStatusClass(product.status)}">
-                                ${product.status}
-                            </span>
-                        ` : '<span></span>'}
-                        <a href="${product.installUrl || product.url}"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="install-btn inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg
-                                  bg-claw-500 hover:bg-claw-600 text-white transition">
-                            ${product.type === 'commercial' ? '访问' : '安装'}
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
+                    <!-- Action Button -->
+                    <a href="${product.installUrl || product.url}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="install-btn inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg
+                              bg-claw-500 hover:bg-claw-600 text-white transition flex-shrink-0">
+                        ${product.type === 'commercial' ? '访问' : '安装'}
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         `).join('');
+
+        // Render vote buttons for each product
+        state.filteredProducts.forEach(product => {
+            const container = document.querySelector(`[data-product-id="${product.id}"] .vote-container`);
+            if (container) {
+                renderVoteButtons(container, product.id);
+            }
+        });
     }
 
     /**
@@ -326,4 +418,9 @@
     } else {
         init();
     }
+
+    // Expose functions to window for onclick handlers
+    window.ClawHubApp = {
+        handleVote
+    };
 })();

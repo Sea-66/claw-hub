@@ -55,6 +55,75 @@ html {
     transform: translateY(-4px);
 }
 
+/* Product bar styles */
+.product-bar {
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+.product-bar:hover {
+    border-left-color: #ed7712;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .product-bar:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Voting buttons */
+.vote-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    min-width: 48px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.vote-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .vote-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.vote-btn.upvoted {
+    color: #10b981;
+}
+
+.vote-btn.downvoted {
+    color: #ef4444;
+}
+
+.vote-btn .vote-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.vote-btn .vote-count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Type indicator colors */
+.type-opensource {
+    border-left-color: #10b981 !important;
+}
+
+.type-commercial {
+    border-left-color: #3b82f6 !important;
+}
+
+.type-tool {
+    border-left-color: #8b5cf6 !important;
+}
+
 /* Tag styles */
 .tag {
     transition: background-color 0.2s ease, color 0.2s ease;
