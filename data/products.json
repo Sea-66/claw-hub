@@ -3,8 +3,8 @@
     {
       "id": "openclaw",
       "name": "OpenClaw",
-      "emoji": "🦞",
-      "description": "原版龙虾，功能最完整的 AI Agent 开源项目，150K+ GitHub Stars",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/openclaw.svg",
+      "description": "原版龙虾，功能最完整的 AI Agent 开源项目，260K+ GitHub Stars",
       "stars": "260K+",
       "language": "TypeScript",
       "type": "opensource",
@@ -15,7 +15,7 @@
     {
       "id": "nanoclaw",
       "name": "NanoClaw",
-      "emoji": "🔬",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/nanoclaw.svg",
       "description": "轻量级版本，容器安全隔离，适合生产环境，Qwibit.ai 出品",
       "stars": "9.5K+",
       "language": "TypeScript",
@@ -27,7 +27,7 @@
     {
       "id": "zeroclaw",
       "name": "ZeroClaw",
-      "emoji": "⚡",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/zeroclaw.svg",
       "description": "Rust 极致轻量，3.4MB二进制，<10ms冷启动，<5MB内存占用",
       "stars": "22K+",
       "language": "Rust",
@@ -39,7 +39,7 @@
     {
       "id": "picoclaw",
       "name": "PicoClaw",
-      "emoji": "🥧",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/picoclaw.svg",
       "description": "Sipeed 出品超轻量 Go 实现，<10MB内存，$10硬件可运行",
       "stars": "5K+",
       "language": "Go",
@@ -51,7 +51,7 @@
     {
       "id": "tinyclaw",
       "name": "TinyClaw",
-      "emoji": "🐜",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tinyclaw.svg",
       "description": "多Agent协作框架，支持多团队、多频道协作，7x24小时运行",
       "stars": "3K+",
       "language": "TypeScript",
@@ -63,7 +63,7 @@
     {
       "id": "nanobot",
       "name": "Nanobot",
-      "emoji": "🤖",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/nanobot.svg",
       "description": "港大 HKUDS 出品，超轻量研究级框架，仅4000行代码",
       "stars": "22K+",
       "language": "Python",
@@ -75,7 +75,7 @@
     {
       "id": "ironclaw",
       "name": "IronClaw",
-      "emoji": "🛡️",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/ironclaw.svg",
       "description": "企业级安全增强版，Rust 重构，TEE可信执行环境",
       "stars": "8K+",
       "language": "Rust",
@@ -86,8 +86,8 @@
     },
     {
       "id": "qclaw",
-      "name": "QClaw / 元宝",
-      "emoji": "🐧",
+      "name": "腾讯混元",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/hunyuan.svg",
       "description": "腾讯出品，支持微信/QQ双端接入，混元大模型驱动",
       "company": "腾讯",
       "type": "commercial",
@@ -99,7 +99,7 @@
     {
       "id": "lobsterai",
       "name": "LobsterAI",
-      "emoji": "🦐",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/lobsterai.svg",
       "description": "网易有道出品，本地化+沙箱，数据不上云，7x24小时助理",
       "company": "网易有道",
       "type": "commercial",
@@ -110,8 +110,8 @@
     },
     {
       "id": "miclaw",
-      "name": "Miclaw",
-      "emoji": "📱",
+      "name": "小米 AI",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/xiaomi.svg",
       "description": "小米出品，MiMo大模型，人车家全生态，小米17系列首发",
       "company": "小米",
       "type": "commercial",
@@ -121,9 +121,9 @@
       "installUrl": "https://web.vip.miui.com/page/info/mio/mio/detail?postId=53167929"
     },
     {
-      "id": "kimi-claw",
+      "id": "kimi",
       "name": "Kimi",
-      "emoji": "🌙",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/moonshot.svg",
       "description": "月之暗面出品，K2.5模型支持视觉编程和智能体协作",
       "company": "月之暗面",
       "type": "commercial",
@@ -133,9 +133,9 @@
       "installUrl": "https://www.kimi.com/"
     },
     {
-      "id": "maxclaw",
-      "name": "海螺AI / MiniMax",
-      "emoji": "🎬",
+      "id": "minimax",
+      "name": "海螺AI",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/minimax.svg",
       "description": "MiniMax出品，多模态大模型，视频生成能力，服务2亿+用户",
       "company": "MiniMax",
       "type": "commercial",
@@ -145,9 +145,9 @@
       "installUrl": "https://hailuoai.com/"
     },
     {
-      "id": "hiclaw",
-      "name": "通义千问 / 钉钉Agent",
-      "emoji": "🏛️",
+      "id": "qwen",
+      "name": "通义千问",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/qwen.svg",
       "description": "阿里出品，通义千问+钉钉Agent OS，企业级解决方案",
       "company": "阿里",
       "type": "commercial",
@@ -159,7 +159,7 @@
     {
       "id": "coze",
       "name": "扣子 Coze",
-      "emoji": "🎯",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/coze.svg",
       "description": "字节跳动出品，AI办公平台，支持PPT、视频、Agent开发",
       "company": "字节跳动",
       "type": "commercial",
@@ -171,7 +171,7 @@
     {
       "id": "shizai-agent",
       "name": "实在Agent",
-      "emoji": "💼",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/indeed.svg",
       "description": "实在智能出品，AI+RPA行业引领者，企业级中国版",
       "company": "实在智能",
       "type": "commercial",
@@ -183,7 +183,7 @@
     {
       "id": "oneclaw",
       "name": "OneClaw",
-      "emoji": "📦",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/oneclaw.svg",
       "description": "OpenClaw 一键安装包，无需命令行，1分钟上手",
       "type": "tool",
       "tags": ["工具", "安装包", "一键部署"],
@@ -193,7 +193,7 @@
     {
       "id": "clawhub",
       "name": "ClawHub",
-      "emoji": "🏪",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/clawhub.svg",
       "description": "OpenClaw 官方技能市场，13000+ 社区技能插件",
       "type": "tool",
       "tags": ["技能市场", "插件", "社区"],
@@ -203,7 +203,7 @@
     {
       "id": "clawsec",
       "name": "ClawSec",
-      "emoji": "🔐",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/clawsec.svg",
       "description": "龙虾安全技能套件，渗透测试与安全审计工具集",
       "type": "tool",
       "tags": ["安全", "工具", "渗透测试"],
@@ -213,7 +213,7 @@
     {
       "id": "devin",
       "name": "Devin",
-      "emoji": "🧑‍💻",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/devin.svg",
       "description": "Cognition 出品，首个AI软件工程师，自主编码测试部署",
       "company": "Cognition",
       "type": "tool",
@@ -224,7 +224,7 @@
     {
       "id": "cursor",
       "name": "Cursor",
-      "emoji": "✨",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/cursor.svg",
       "description": "AI代码编辑器，VS Code增强版，支持Claude/GPT-4o",
       "company": "Anysphere",
       "type": "tool",
@@ -235,7 +235,7 @@
     {
       "id": "molili",
       "name": "Molili",
-      "emoji": "🇨🇳",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/molili.svg",
       "description": "中文版开箱即用，本土化优化",
       "type": "tool",
       "tags": ["中文", "本土化", "开箱即用"],
@@ -245,7 +245,7 @@
     {
       "id": "autoclaw",
       "name": "AutoClaw",
-      "emoji": "🔄",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/autoclaw.svg",
       "description": "自演化 Agent 经济，自动化任务编排",
       "type": "tool",
       "tags": ["自动化", "Agent经济", "编排"],

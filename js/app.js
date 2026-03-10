@@ -233,7 +233,12 @@
                     <!-- Header -->
                     <div class="flex items-start justify-between mb-3">
                         <div class="flex items-center space-x-3">
-                            <span class="text-3xl">${product.emoji || '🦞'}</span>
+                            <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 overflow-hidden flex-shrink-0">
+                                ${product.icon
+                                    ? `<img src="${product.icon}" alt="${product.name}" class="w-8 h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-2xl hidden items-center justify-center">🦞</span>`
+                                    : `<span class="text-2xl">🦞</span>`
+                                }
+                            </div>
                             <div>
                                 <h3 class="font-bold text-gray-900 dark:text-white">${product.name}</h3>
                                 ${product.company ? `<p class="text-xs text-gray-500 dark:text-gray-400">${product.company}</p>` : ''}
