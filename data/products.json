@@ -75,7 +75,7 @@
     {
       "id": "workbuddy",
       "name": "WorkBuddy",
-      "icon": "https://www.codebuddy.cn/favicon.ico",
+      "icon": "https://www.codebuddy.cn/favicon.png",
       "description": "AI 原生桌面智能体工作台，自然语言驱动办公自动化",
       "company": "CodeBuddy",
       "type": "commercial",
@@ -123,7 +123,7 @@
     {
       "id": "arkclaw",
       "name": "ArkClaw",
-      "icon": "https://www.volcengine.com/favicon.ico",
+      "icon": "https://portal.volccdn.com/obj/volcfe/misc/favicon.png",
       "description": "火山引擎出品，基于豆包大模型的 OpenClaw 智能体平台",
       "company": "火山引擎",
       "type": "commercial",
