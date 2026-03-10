@@ -189,18 +189,6 @@
       "tags": ["技能市场", "插件", "社区"],
       "url": "https://clawhub.ai",
       "installUrl": "https://clawhub.ai"
-    },
-    {
-      "id": "pc-manager",
-      "name": "龙虾管家",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencent.svg",
-      "description": "腾讯电脑管家18.0，AI安全沙箱，为OpenClaw开启隔离运行环境",
-      "company": "腾讯",
-      "type": "tool",
-      "tags": ["安全", "沙箱", "腾讯"],
-      "status": "可用",
-      "url": "https://pcmanager.qq.com/",
-      "installUrl": "https://pcmanager.qq.com/"
     }
   ],
   "categories": [
