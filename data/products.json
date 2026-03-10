@@ -133,6 +133,18 @@
       "installUrl": "https://github.com/netease-youdao/LobsterAI"
     },
     {
+      "id": "kimiclaw",
+      "name": "Kimi Claw",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/moonshot.svg",
+      "description": "通过 Kimi 极速部署 OpenClaw，7x24小时在线 AI 助手，长期记忆与自动化",
+      "company": "月之暗面",
+      "type": "commercial",
+      "tags": ["国产", "商业", "Kimi", "云端"],
+      "status": "可用",
+      "url": "https://www.kimi.com/bot",
+      "installUrl": "https://www.kimi.com/bot"
+    },
+    {
       "id": "clawhub",
       "name": "ClawHub",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/clawhub.svg",
