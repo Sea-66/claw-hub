@@ -70,6 +70,12 @@ html {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Keep product icons in original colors in dark mode */
+.dark .product-bar img {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
 /* Voting buttons */
 .vote-btn {
     display: flex;

@@ -409,7 +409,7 @@
                     </div>
 
                     <!-- Icon -->
-                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700 overflow-hidden flex-shrink-0">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-white overflow-hidden flex-shrink-0">
                         ${product.icon
                             ? `<img src="${product.icon}" alt="${product.name}" class="w-8 h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-2xl hidden items-center justify-center">🦞</span>`
                             : `<span class="text-2xl">🦞</span>`
