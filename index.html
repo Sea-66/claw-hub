@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawHub - 龙虾聚合站 | AI Agent 产品导航</title>
+    <meta name="description" content="ClawHub 是龙虾（OpenClaw）系列 AI Agent 产品的聚合导航站，收录开源原版、国产商业版、工具系统等所有 Claw 系列产品">
+    <meta name="keywords" content="OpenClaw, 龙虾, AI Agent, NanoClaw, QClaw, LobsterAI, AI编程">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        claw: {
+                            50: '#fef7ee',
+                            100: '#fdedd3',
+                            200: '#fad7a6',
+                            300: '#f6ba6e',
+                            400: '#f19332',
+                            500: '#ed7712',
+                            600: '#de5c08',
+                            700: '#b84309',
+                            800: '#93350f',
+                            900: '#782e10',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <span class="text-3xl">🦞</span>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">ClawHub</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">龙虾聚合站</p>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="flex-1 max-w-md mx-8 hidden sm:block">
+                    <div class="relative">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="搜索产品..."
+                            class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-claw-500 focus:border-transparent transition"
+                        >
+                        <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button
+                    id="themeToggle"
+                    class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition"
+                    title="切换主题"
+                >
+                    <span class="dark:hidden">🌙</span>
+                    <span class="hidden dark:inline">☀️</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Search -->
+    <div class="sm:hidden px-4 py-3 bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+        <div class="relative">
+            <input
+                type="text"
+                id="mobileSearchInput"
+                placeholder="搜索产品..."
+                class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-claw-500 focus:border-transparent"
+            >
+            <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Category Filter -->
+    <nav class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-1 py-3 overflow-x-auto" id="categoryTabs">
+                <!-- Categories will be rendered here -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Stats Bar -->
+    <div class="bg-claw-500 dark:bg-claw-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center justify-center space-x-8 text-sm">
+                <span class="flex items-center">
+                    <span class="font-bold" id="totalCount">0</span>
+                    <span class="ml-1 opacity-80">个产品</span>
+                </span>
+                <span class="flex items-center">
+                    <span class="font-bold" id="opensourceCount">0</span>
+                    <span class="ml-1 opacity-80">个开源</span>
+                </span>
+                <span class="flex items-center">
+                    <span class="font-bold" id="commercialCount">0</span>
+                    <span class="ml-1 opacity-80">个商业</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Products Grid -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Products will be rendered here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-16">
+            <span class="text-6xl mb-4 block">🔍</span>
+            <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300">未找到匹配的产品</h3>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">尝试其他关键词或清除筛选条件</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t dark:border-gray-700 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="text-2xl">🦞</span>
+                    <span class="text-gray-600 dark:text-gray-400">ClawHub - 让每个人都能找到合适的龙虾</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/openclaw/openclaw" target="_blank" class="text-gray-500 hover:text-claw-500 dark:text-gray-400 dark:hover:text-claw-400 transition">
+                        GitHub
+                    </a>
+                    <a href="https://clawhub.ai" target="_blank" class="text-gray-500 hover:text-claw-500 dark:text-gray-400 dark:hover:text-claw-400 transition">
+                        ClawHub
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t dark:border-gray-700 text-center text-sm text-gray-500 dark:text-gray-400">
+                <p>© 2026 ClawHub. 数据来源于各产品官网及 GitHub，仅供学习参考。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

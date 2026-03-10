@@ -1,0 +1,27 @@
+{
+  "name": "claw-hub",
+  "version": "1.0.0",
+  "description": "ClawHub - 龙虾聚合站，AI Agent 产品导航",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "sync": "node tools/sync-skills.js",
+    "build": "echo 'Static site - no build required'"
+  },
+  "keywords": [
+    "openclaw",
+    "claw",
+    "ai-agent",
+    "navigation",
+    "aggregator"
+  ],
+  "author": "ClawHub Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/claw-hub.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

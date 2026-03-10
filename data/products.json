@@ -1,0 +1,262 @@
+{
+  "products": [
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "emoji": "🦞",
+      "description": "原版龙虾，功能最完整的 AI Agent 开源项目",
+      "stars": "260K+",
+      "language": "TypeScript",
+      "type": "opensource",
+      "tags": ["原版", "开源", "TypeScript"],
+      "url": "https://github.com/openclaw/openclaw",
+      "installUrl": "https://github.com/openclaw/openclaw#installation"
+    },
+    {
+      "id": "nanoclaw",
+      "name": "NanoClaw",
+      "emoji": "🔬",
+      "description": "轻量级版本，容器安全隔离，适合生产环境",
+      "stars": "9.5K+",
+      "language": "TypeScript",
+      "type": "opensource",
+      "tags": ["轻量", "开源", "容器"],
+      "url": "https://github.com/qwibitai/nanoclaw",
+      "installUrl": "https://github.com/qwibitai/nanoclaw#readme"
+    },
+    {
+      "id": "zeroclaw",
+      "name": "ZeroClaw",
+      "emoji": "⚡",
+      "description": "3.4MB二进制文件，<5MB内存占用，极致轻量",
+      "stars": "22K+",
+      "language": "Rust",
+      "type": "opensource",
+      "tags": ["轻量", "Rust", "高性能"],
+      "url": "https://github.com/zeroclaw/zeroclaw",
+      "installUrl": "https://github.com/zeroclaw/zeroclaw/releases"
+    },
+    {
+      "id": "picoclaw",
+      "name": "PicoClaw",
+      "emoji": "🥧",
+      "description": "超轻量级 Go 语言实现，嵌入式友好",
+      "stars": "5K+",
+      "language": "Go",
+      "type": "opensource",
+      "tags": ["轻量", "Go", "嵌入式"],
+      "url": "https://github.com/sipeed/picoclaw",
+      "installUrl": "https://github.com/sipeed/picoclaw#installation"
+    },
+    {
+      "id": "tinyclaw",
+      "name": "TinyClaw",
+      "emoji": "🐜",
+      "description": "精简版龙虾，核心功能保留",
+      "stars": "3K+",
+      "language": "TypeScript",
+      "type": "opensource",
+      "tags": ["轻量", "精简", "开源"],
+      "url": "https://github.com/tinyclaw/tinyclaw",
+      "installUrl": "https://github.com/tinyclaw/tinyclaw"
+    },
+    {
+      "id": "nanobot",
+      "name": "Nanobot",
+      "emoji": "🤖",
+      "description": "港大 HKUDS 出品的研究级 AI Agent 框架",
+      "stars": "22K+",
+      "language": "Python",
+      "type": "opensource",
+      "tags": ["研究", "学术", "Python"],
+      "url": "https://github.com/hkuds/nanobot",
+      "installUrl": "https://github.com/hkuds/nanobot"
+    },
+    {
+      "id": "ironclaw",
+      "name": "IronClaw",
+      "emoji": "🛡️",
+      "description": "企业级安全增强版龙虾",
+      "stars": "8K+",
+      "language": "TypeScript",
+      "type": "opensource",
+      "tags": ["企业", "安全", "开源"],
+      "url": "https://github.com/ironclaw/ironclaw",
+      "installUrl": "https://github.com/ironclaw/ironclaw"
+    },
+    {
+      "id": "nullclaw",
+      "name": "NullClaw",
+      "emoji": "∅",
+      "description": "极简主义设计，零依赖实现",
+      "stars": "2K+",
+      "language": "C",
+      "type": "opensource",
+      "tags": ["极简", "C", "零依赖"],
+      "url": "https://github.com/nullclaw/nullclaw",
+      "installUrl": "https://github.com/nullclaw/nullclaw"
+    },
+    {
+      "id": "qclaw",
+      "name": "QClaw",
+      "emoji": "🐧",
+      "description": "腾讯出品，支持微信/QQ双端接入",
+      "company": "腾讯",
+      "type": "commercial",
+      "tags": ["国产", "商业", "腾讯", "微信"],
+      "status": "内测中",
+      "url": "https://qclaw.tencent.com",
+      "installUrl": "https://qclaw.tencent.com/apply"
+    },
+    {
+      "id": "lobsterai",
+      "name": "LobsterAI",
+      "emoji": "🦐",
+      "description": "网易有道出品，本地化+沙箱，数据不上云",
+      "company": "网易有道",
+      "type": "commercial",
+      "tags": ["国产", "商业", "网易", "本地化"],
+      "status": "已开源",
+      "url": "https://github.com/netease/lobster-ai",
+      "installUrl": "https://github.com/netease/lobster-ai"
+    },
+    {
+      "id": "miclaw",
+      "name": "Miclaw",
+      "emoji": "📱",
+      "description": "小米出品，MiMo大模型，人车家全生态",
+      "company": "小米",
+      "type": "commercial",
+      "tags": ["国产", "商业", "小米", "IoT"],
+      "status": "开发中",
+      "url": "https://miclaw.mi.com",
+      "installUrl": "https://miclaw.mi.com/download"
+    },
+    {
+      "id": "kimi-claw",
+      "name": "Kimi Claw",
+      "emoji": "🌙",
+      "description": "月之暗面出品，Kimi K2.5模型，即开即用",
+      "company": "月之暗面",
+      "type": "commercial",
+      "tags": ["国产", "商业", "Kimi", "即开即用"],
+      "status": "可用",
+      "url": "https://claw.kimi.ai",
+      "installUrl": "https://claw.kimi.ai"
+    },
+    {
+      "id": "maxclaw",
+      "name": "MaxClaw",
+      "emoji": "🎬",
+      "description": "MiniMax出品，云端部署，视频生成能力",
+      "company": "MiniMax",
+      "type": "commercial",
+      "tags": ["国产", "商业", "MiniMax", "云端"],
+      "status": "可用",
+      "url": "https://maxclaw.minimaxi.com",
+      "installUrl": "https://maxclaw.minimaxi.com"
+    },
+    {
+      "id": "hiclaw",
+      "name": "HiClaw",
+      "emoji": "🏛️",
+      "description": "阿里出品，企业级解决方案，钉钉集成",
+      "company": "阿里",
+      "type": "commercial",
+      "tags": ["国产", "商业", "阿里", "企业级"],
+      "status": "可用",
+      "url": "https://hiclaw.aliyun.com",
+      "installUrl": "https://hiclaw.aliyun.com/trial"
+    },
+    {
+      "id": "coze",
+      "name": "扣子 Coze",
+      "emoji": "🎯",
+      "description": "字节跳动出品，一句话完成任务，低代码平台",
+      "company": "字节跳动",
+      "type": "commercial",
+      "tags": ["国产", "商业", "字节", "低代码"],
+      "status": "可用",
+      "url": "https://www.coze.cn",
+      "installUrl": "https://www.coze.cn"
+    },
+    {
+      "id": "shizai-agent",
+      "name": "实在Agent",
+      "emoji": "💼",
+      "description": "实在智能出品，企业级中国版，RPA集成",
+      "company": "实在智能",
+      "type": "commercial",
+      "tags": ["国产", "商业", "企业级", "RPA"],
+      "status": "可用",
+      "url": "https://www.shizhi.ai",
+      "installUrl": "https://www.shizhi.ai/demo"
+    },
+    {
+      "id": "oneclaw",
+      "name": "OneClaw",
+      "emoji": "📦",
+      "description": "一键安装包，开箱即用的龙虾部署方案",
+      "type": "tool",
+      "tags": ["工具", "安装包", "一键部署"],
+      "url": "https://oneclaw.cn",
+      "installUrl": "https://oneclaw.cn/download"
+    },
+    {
+      "id": "clawos",
+      "name": "ClawOS",
+      "emoji": "💿",
+      "description": "龙虾操作系统 ISO，预装环境的完整系统",
+      "type": "tool",
+      "tags": ["系统", "ISO", "完整环境"],
+      "url": "https://clawos.io",
+      "installUrl": "https://clawos.io/download"
+    },
+    {
+      "id": "clawsec",
+      "name": "ClawSec",
+      "emoji": "🔐",
+      "description": "龙虾安全技能套件，渗透测试与安全审计",
+      "type": "tool",
+      "tags": ["安全", "工具", "渗透测试"],
+      "url": "https://github.com/prompt-security/clawsec",
+      "installUrl": "https://github.com/prompt-security/clawsec"
+    },
+    {
+      "id": "myclaw",
+      "name": "MyClaw",
+      "emoji": "☁️",
+      "description": "云端托管服务，无需本地部署",
+      "type": "tool",
+      "tags": ["云服务", "托管", "SaaS"],
+      "url": "https://myclaw.ai",
+      "installUrl": "https://myclaw.ai/signup"
+    },
+    {
+      "id": "molili",
+      "name": "Molili",
+      "emoji": "🇨🇳",
+      "description": "中文版开箱即用，本土化优化",
+      "type": "tool",
+      "tags": ["中文", "本土化", "开箱即用"],
+      "url": "https://molili.cn",
+      "installUrl": "https://molili.cn"
+    },
+    {
+      "id": "autoclaw",
+      "name": "AutoClaw",
+      "emoji": "🔄",
+      "description": "自演化 Agent 经济，自动化任务编排",
+      "type": "tool",
+      "tags": ["自动化", "Agent经济", "编排"],
+      "url": "https://lablab.ai/autoclaw",
+      "installUrl": "https://lablab.ai/autoclaw"
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "全部", "icon": "🌐" },
+    { "id": "opensource", "name": "开源原版", "icon": "📖" },
+    { "id": "commercial", "name": "国产商业", "icon": "🏢" },
+    { "id": "tool", "name": "工具/系统", "icon": "🛠️" }
+  ]
+}

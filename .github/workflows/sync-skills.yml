@@ -1,0 +1,67 @@
+name: Sync ClawHub Skills
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    # Allow manual trigger
+    inputs:
+      force:
+        description: 'Force sync even if no changes'
+        required: false
+        default: 'false'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          fi
+
+      - name: Sync skills from ClawHub API
+        run: node tools/sync-skills.js
+        env:
+          CLAWHUB_API_URL: ${{ secrets.CLAWHUB_API_URL }}
+          CLAWHUB_API_KEY: ${{ secrets.CLAWHUB_API_KEY }}
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --exit-code data/skills.json && echo "has_changes=false" >> $GITHUB_OUTPUT || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true' || github.event.inputs.force == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/skills.json
+          git commit -m "chore: sync skills from ClawHub API [skip ci]"
+          git push
+
+      - name: Summary
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "✅ Skills data updated successfully" >> $GITHUB_STEP_SUMMARY
+          echo "Updated at: $(date -u)" >> $GITHUB_STEP_SUMMARY
+
+      - name: No changes
+        if: steps.check_changes.outputs.has_changes != 'true'
+        run: |
+          echo "ℹ️ No changes detected" >> $GITHUB_STEP_SUMMARY
+          echo "Last checked: $(date -u)" >> $GITHUB_STEP_SUMMARY
