@@ -3,7 +3,7 @@
     {
       "id": "openclaw",
       "name": "OpenClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/openclaw.svg",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
       "description": "原版龙虾，功能最完整的 AI Agent 开源项目，GitHub 历史星标第一",
       "stars": "260K+",
       "language": "TypeScript",
@@ -15,7 +15,7 @@
     {
       "id": "nanoclaw",
       "name": "NanoClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/nanoclaw.svg",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
       "description": "轻量级版本，容器安全隔离，适合生产环境，Qwibit.ai 出品",
       "stars": "9.5K+",
       "language": "TypeScript",
@@ -27,7 +27,7 @@
     {
       "id": "zeroclaw",
       "name": "ZeroClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/zeroclaw.svg",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
       "description": "Rust 极致轻量，3.4MB二进制，<10ms冷启动，<5MB内存占用",
       "stars": "22K+",
       "language": "Rust",
@@ -39,7 +39,7 @@
     {
       "id": "picoclaw",
       "name": "PicoClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/picoclaw.svg",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
       "description": "Sipeed 出品超轻量 Go 实现，<10MB内存，$10硬件可运行",
       "stars": "5K+",
       "language": "Go",
@@ -51,7 +51,7 @@
     {
       "id": "tinyclaw",
       "name": "TinyClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tinyclaw.svg",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
       "description": "多Agent协作框架，支持多团队、多频道协作，7x24小时运行",
       "stars": "3K+",
       "language": "TypeScript",
@@ -63,7 +63,7 @@
     {
       "id": "ironclaw",
       "name": "IronClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/ironclaw.svg",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
       "description": "企业级安全增强版，Rust 重构，TEE可信执行环境",
       "stars": "8K+",
       "language": "Rust",
@@ -75,7 +75,7 @@
     {
       "id": "workbuddy",
       "name": "WorkBuddy",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencent.svg",
+      "icon": "https://workbuddy.qq.com/favicon.ico",
       "description": "腾讯版免部署小龙虾，零配置下载即用，兼容OpenClaw技能",
       "company": "腾讯",
       "type": "commercial",
@@ -87,7 +87,7 @@
     {
       "id": "qclaw",
       "name": "QClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/qq.svg",
+      "icon": "https://claw.guanjia.qq.com/images/logo.png",
       "description": "腾讯电脑管家出品，微信直接对话远程操控，5000+ Skills生态，支持Mac/Windows",
       "company": "腾讯",
       "type": "commercial",
@@ -99,7 +99,7 @@
     {
       "id": "lighthouse",
       "name": "腾讯云 Lighthouse",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencentcloud.svg",
+      "icon": "https://cloudcache.tencent-cloud.com/qcloud/app/resource/ac/safari-pinned-tab.svg",
       "description": "云端7×24小时稳定在线，支持QQ/企微双入口操控OpenClaw",
       "company": "腾讯云",
       "type": "commercial",
@@ -111,7 +111,7 @@
     {
       "id": "adp",
       "name": "智能体开发平台 ADP",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencentcloud.svg",
+      "icon": "https://cloudcache.tencent-cloud.com/qcloud/app/resource/ac/safari-pinned-tab.svg",
       "description": "腾讯云企业级解决方案，一键部署OpenClaw，秒级接入企业微信",
       "company": "腾讯云",
       "type": "commercial",
@@ -123,7 +123,7 @@
     {
       "id": "lobsterai",
       "name": "LobsterAI",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/lobsterai.svg",
+      "icon": "https://shared.ydstatic.com/images/favicon.ico",
       "description": "网易有道出品，本地化+沙箱，数据不上云，7x24小时助理",
       "company": "网易有道",
       "type": "commercial",
@@ -135,7 +135,7 @@
     {
       "id": "autoclaw",
       "name": "AutoClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/zhipu.svg",
+      "icon": "https://autoglm.zhipuai.cn/autoclaw/assets/app-icon-round-B_zLrovM.png",
       "description": "智谱AI出品，基于AutoGLM的智能体平台，自动化执行复杂任务",
       "company": "智谱AI",
       "type": "commercial",
@@ -147,7 +147,7 @@
     {
       "id": "arkclaw",
       "name": "ArkClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/volcengine.svg",
+      "icon": "https://www.volcengine.com/favicon.ico",
       "description": "火山引擎出品，基于豆包大模型的 OpenClaw 智能体平台",
       "company": "火山引擎",
       "type": "commercial",
@@ -159,7 +159,7 @@
     {
       "id": "maxclaw",
       "name": "MaxClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/minimax.svg",
+      "icon": "https://agent.minimaxi.com/assets/logo/favicon_v2.png?v=4",
       "description": "MiniMax 出品，基于 OpenClaw 技术的 AI 智能体创建平台，支持多智能体协作",
       "company": "MiniMax",
       "type": "commercial",
@@ -171,7 +171,7 @@
     {
       "id": "kimiclaw",
       "name": "Kimi Claw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/moonshot.svg",
+      "icon": "https://www.kimi.com/favicon.ico",
       "description": "通过 Kimi 极速部署 OpenClaw，7x24小时在线 AI 助手，长期记忆与自动化",
       "company": "月之暗面",
       "type": "commercial",
@@ -183,7 +183,7 @@
     {
       "id": "clawhub",
       "name": "ClawHub",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/clawhub.svg",
+      "icon": "https://clawhub.ai/favicon.ico",
       "description": "OpenClaw 官方技能市场，13000+ 社区技能插件",
       "type": "tool",
       "tags": ["技能市场", "插件", "社区"],
