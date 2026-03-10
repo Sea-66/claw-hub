@@ -88,13 +88,13 @@
       "id": "qclaw",
       "name": "QClaw",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/qq.svg",
-      "description": "腾讯出品，可通过微信对话远程操控，Windows/Mac一键安装",
+      "description": "腾讯电脑管家出品，微信直接对话远程操控，5000+ Skills生态，支持Mac/Windows",
       "company": "腾讯",
       "type": "commercial",
       "tags": ["国产", "商业", "腾讯", "微信"],
-      "status": "内测中",
-      "url": "https://hunyuan.tencent.com/",
-      "installUrl": "https://hunyuan.tencent.com/"
+      "status": "可用",
+      "url": "https://claw.guanjia.qq.com/",
+      "installUrl": "https://claw.guanjia.qq.com/"
     },
     {
       "id": "lighthouse",
@@ -131,6 +131,30 @@
       "status": "已开源",
       "url": "https://github.com/netease-youdao/LobsterAI",
       "installUrl": "https://github.com/netease-youdao/LobsterAI"
+    },
+    {
+      "id": "autoclaw",
+      "name": "AutoClaw",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/zhipu.svg",
+      "description": "智谱AI出品，基于AutoGLM的智能体平台，自动化执行复杂任务",
+      "company": "智谱AI",
+      "type": "commercial",
+      "tags": ["国产", "商业", "智谱", "云端"],
+      "status": "可用",
+      "url": "https://autoglm.zhipuai.cn/autoclaw/",
+      "installUrl": "https://autoglm.zhipuai.cn/autoclaw/"
+    },
+    {
+      "id": "arkclaw",
+      "name": "ArkClaw",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/volcengine.svg",
+      "description": "火山引擎出品，基于豆包大模型的 OpenClaw 智能体平台",
+      "company": "火山引擎",
+      "type": "commercial",
+      "tags": ["国产", "商业", "字节跳动", "云端"],
+      "status": "可用",
+      "url": "https://www.volcengine.com/experience/ark?mode=claw",
+      "installUrl": "https://www.volcengine.com/experience/ark?mode=claw"
     },
     {
       "id": "maxclaw",
