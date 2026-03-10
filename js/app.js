@@ -86,7 +86,6 @@
             // Initialize with random votes for demo
             state.votes[productId] = {
                 up: Math.floor(Math.random() * 100) + 10,
-                down: Math.floor(Math.random() * 20),
                 userVote: null
             };
         }
@@ -96,21 +95,16 @@
     /**
      * Handle vote action
      */
-    function handleVote(productId, voteType) {
+    function handleVote(productId) {
         const voteData = getVoteData(productId);
 
-        // If user already voted this type, remove the vote
-        if (voteData.userVote === voteType) {
-            voteData[voteType]--;
+        // Toggle vote
+        if (voteData.userVote === 'up') {
+            voteData.up--;
             voteData.userVote = null;
         } else {
-            // If user voted the opposite type, remove that vote first
-            if (voteData.userVote) {
-                voteData[voteData.userVote]--;
-            }
-            // Add new vote
-            voteData[voteType]++;
-            voteData.userVote = voteType;
+            voteData.up++;
+            voteData.userVote = 'up';
         }
 
         saveVotes();
@@ -129,14 +123,9 @@
         const voteData = getVoteData(productId);
         container.innerHTML = `
             <button class="vote-btn ${voteData.userVote === 'up' ? 'upvoted' : ''}"
-                    onclick="window.ClawHubApp.handleVote('${productId}', 'up')">
+                    onclick="window.ClawHubApp.handleVote('${productId}')">
                 <span class="vote-icon">👍</span>
                 <span class="vote-count">${voteData.up}</span>
-            </button>
-            <button class="vote-btn ${voteData.userVote === 'down' ? 'downvoted' : ''}"
-                    onclick="window.ClawHubApp.handleVote('${productId}', 'down')">
-                <span class="vote-icon">👎</span>
-                <span class="vote-count">${voteData.down}</span>
             </button>
         `;
     }
