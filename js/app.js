@@ -14,7 +14,9 @@
         currentCategory: 'all',
         searchQuery: '',
         isLoading: true,
-        votes: {} // Store votes { productId: { up: count, down: count, userVote: 'up'|'down'|null } }
+        votes: {}, // Store votes { productId: { up: count, down: count, userVote: 'up'|'down'|null } }
+        carouselIndex: 0,
+        carouselInterval: null
     };
 
     // DOM Elements
@@ -27,7 +29,8 @@
         emptyState: document.getElementById('emptyState'),
         totalCount: document.getElementById('totalCount'),
         opensourceCount: document.getElementById('opensourceCount'),
-        commercialCount: document.getElementById('commercialCount')
+        commercialCount: document.getElementById('commercialCount'),
+        productCarousel: document.getElementById('productCarousel')
     };
 
     /**
@@ -50,7 +53,43 @@
         renderCategories();
         filterAndRender();
 
+        // Start carousel
+        startCarousel();
+
         state.isLoading = false;
+    }
+
+    /**
+     * Start product carousel
+     */
+    function startCarousel() {
+        if (state.products.length === 0) return;
+
+        const carouselMessages = [
+            '🎯 发现最适合你的 AI Agent',
+            '🚀 OpenClaw - GitHub 260K+ Stars',
+            '💬 QClaw - 微信直接操控',
+            '☁️ ArkClaw - 7×24云端在线',
+            '🦐 LobsterAI - 本地化数据安全',
+            '⚡ ZeroClaw - 3.4MB极致轻量',
+            '🔧 NanoClaw - 容器安全隔离',
+            '🤖 MaxClaw - 多智能体协作',
+            '📱 KimiClaw - 长期记忆助手',
+            '🏢 腾讯云Lighthouse - 企业级部署'
+        ];
+
+        function updateCarousel() {
+            const message = carouselMessages[state.carouselIndex % carouselMessages.length];
+            elements.productCarousel.innerHTML = `
+                <div class="carousel-item text-center">
+                    <span class="text-lg font-medium">${message}</span>
+                </div>
+            `;
+            state.carouselIndex++;
+        }
+
+        updateCarousel();
+        state.carouselInterval = setInterval(updateCarousel, 3000);
     }
 
     /**
@@ -308,12 +347,15 @@
         elements.emptyState.classList.add('hidden');
 
         elements.productsGrid.innerHTML = state.filteredProducts.map((product, index) => `
-            <div class="product-bar bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-4 fade-in type-${product.type}"
-                 data-product-id="${product.id}"
-                 style="animation-delay: ${Math.min(index * 30, 300)}ms">
+            <a href="${product.installUrl || product.url}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="product-bar block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-4 fade-in type-${product.type} cursor-pointer"
+               data-product-id="${product.id}"
+               style="animation-delay: ${Math.min(index * 30, 300)}ms">
                 <div class="flex items-center gap-4">
                     <!-- Vote Buttons -->
-                    <div class="vote-container flex flex-col items-center gap-1 flex-shrink-0">
+                    <div class="vote-container flex flex-col items-center gap-1 flex-shrink-0" onclick="event.preventDefault(); event.stopPropagation();">
                         <!-- Vote buttons will be rendered here -->
                     </div>
 
@@ -347,18 +389,15 @@
                     </div>
 
                     <!-- Action Button -->
-                    <a href="${product.installUrl || product.url}"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="install-btn inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg
+                    <span class="install-btn inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg
                               bg-claw-500 hover:bg-claw-600 text-white transition flex-shrink-0">
-                        ${product.type === 'commercial' ? '访问' : '安装'}
+                        访问
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                    </a>
+                    </span>
                 </div>
-            </div>
+            </a>
         `).join('');
 
         // Render vote buttons for each product

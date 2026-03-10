@@ -129,8 +129,8 @@
       "type": "commercial",
       "tags": ["国产", "商业", "网易", "本地化"],
       "status": "已开源",
-      "url": "https://github.com/netease-youdao/LobsterAI",
-      "installUrl": "https://github.com/netease-youdao/LobsterAI"
+      "url": "https://lobsterai.youdao.com/#/index",
+      "installUrl": "https://lobsterai.youdao.com/#/index"
     },
     {
       "id": "autoclaw",
