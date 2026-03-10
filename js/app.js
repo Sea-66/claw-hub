@@ -349,13 +349,13 @@
     function renderCategories() {
         elements.categoryTabs.innerHTML = state.categories.map(cat => `
             <button
-                class="category-tab px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition
+                class="category-tab px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition
                        ${cat.id === state.currentCategory
                            ? 'bg-claw-500 text-white'
                            : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'}"
                 data-category="${cat.id}"
             >
-                <span class="mr-1">${cat.icon}</span>
+                <span class="mr-0.5 sm:mr-1">${cat.icon}</span>
                 ${cat.name}
             </button>
         `).join('');
@@ -399,52 +399,57 @@
             <a href="${product.installUrl || product.url}"
                target="_blank"
                rel="noopener noreferrer"
-               class="product-bar block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-4 fade-in type-${product.type} cursor-pointer"
+               class="product-bar block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-3 sm:p-4 fade-in type-${product.type} cursor-pointer"
                data-product-id="${product.id}"
                style="animation-delay: ${Math.min(index * 30, 300)}ms">
-                <div class="flex items-center gap-4">
-                    <!-- Vote Buttons -->
-                    <div class="vote-container flex flex-col items-center gap-1 flex-shrink-0" onclick="event.preventDefault(); event.stopPropagation();">
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <!-- Vote Buttons - Hidden on mobile -->
+                    <div class="vote-container hidden sm:flex flex-col items-center gap-1 flex-shrink-0" onclick="event.preventDefault(); event.stopPropagation();">
                         <!-- Vote buttons will be rendered here -->
                     </div>
 
                     <!-- Icon -->
-                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-white overflow-hidden flex-shrink-0">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-white overflow-hidden flex-shrink-0">
                         ${product.icon
-                            ? `<img src="${product.icon}" alt="${product.name}" class="w-8 h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-2xl hidden items-center justify-center">🦞</span>`
-                            : `<span class="text-2xl">🦞</span>`
+                            ? `<img src="${product.icon}" alt="${product.name}" class="w-6 h-6 sm:w-8 sm:h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-xl sm:text-2xl hidden items-center justify-center">🦞</span>`
+                            : `<span class="text-xl sm:text-2xl">🦞</span>`
                         }
                     </div>
 
                     <!-- Info -->
                     <div class="flex-1 min-w-0">
-                        <div class="flex items-center gap-2 flex-wrap">
-                            <h3 class="font-bold text-gray-900 dark:text-white">${product.name}</h3>
-                            ${product.company ? `<span class="text-xs text-gray-500 dark:text-gray-400">· ${product.company}</span>` : ''}
+                        <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                            <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white">${product.name}</h3>
+                            ${product.company ? `<span class="text-xs text-gray-500 dark:text-gray-400 hidden sm:inline">· ${product.company}</span>` : ''}
                             ${product.stars ? `<span class="text-xs text-yellow-500">⭐ ${product.stars}</span>` : ''}
-                            ${product.status ? `<span class="text-xs px-2 py-0.5 rounded-full ${getStatusClass(product.status)}">${product.status}</span>` : ''}
+                            ${product.status ? `<span class="text-xs px-1.5 sm:px-2 py-0.5 rounded-full ${getStatusClass(product.status)}">${product.status}</span>` : ''}
                         </div>
-                        <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 line-clamp-1">
+                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-0.5 sm:mt-1 line-clamp-1 sm:line-clamp-2">
                             ${product.description || '暂无描述'}
                         </p>
-                        <div class="flex flex-wrap gap-1.5 mt-2">
+                        <div class="flex flex-wrap gap-1 sm:gap-1.5 mt-1.5 sm:mt-2">
                             ${getProductTypeTag(product)}
-                            ${(product.tags || []).slice(0, 4).map(tag => `
-                                <span class="tag px-2 py-0.5 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
+                            ${(product.tags || []).slice(0, 3).map(tag => `
+                                <span class="tag px-1.5 sm:px-2 py-0.5 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
                                     ${tag}
                                 </span>
                             `).join('')}
                         </div>
                     </div>
 
-                    <!-- Action Button -->
-                    <span class="install-btn inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg
+                    <!-- Action Button - Hidden on mobile -->
+                    <span class="install-btn hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg
                               bg-claw-500 hover:bg-claw-600 text-white transition flex-shrink-0">
                         访问
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                     </span>
+
+                    <!-- Mobile Arrow -->
+                    <svg class="sm:hidden w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
                 </div>
             </a>
         `).join('');

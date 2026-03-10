@@ -198,7 +198,21 @@ html {
 /* Responsive adjustments */
 @media (max-width: 640px) {
     .product-card {
-        padding: 1rem;
+        padding: 0.75rem;
+    }
+
+    .product-bar {
+        padding: 0.75rem;
+    }
+
+    /* Make touch targets larger */
+    .category-tab {
+        min-height: 36px;
+    }
+
+    /* Improve touch scrolling */
+    #categoryTabs {
+        -webkit-overflow-scrolling: touch;
     }
 }
 
