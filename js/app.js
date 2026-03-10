@@ -27,10 +27,7 @@
         mobileSearchInput: document.getElementById('mobileSearchInput'),
         themeToggle: document.getElementById('themeToggle'),
         emptyState: document.getElementById('emptyState'),
-        totalCount: document.getElementById('totalCount'),
-        opensourceCount: document.getElementById('opensourceCount'),
-        commercialCount: document.getElementById('commercialCount'),
-        productCarousel: document.getElementById('productCarousel')
+        statsBar: document.getElementById('statsBar')
     };
 
     /**
@@ -60,36 +57,38 @@
     }
 
     /**
-     * Start product carousel
+     * Start stats carousel
      */
     function startCarousel() {
-        if (state.products.length === 0) return;
+        const total = state.products.length;
+        const opensource = state.products.filter(p => p.type === 'opensource').length;
+        const commercial = state.products.filter(p => p.type === 'commercial').length;
 
-        const carouselMessages = [
-            '🎯 发现最适合你的 AI Agent',
-            '🚀 OpenClaw - GitHub 260K+ Stars',
-            '💬 QClaw - 微信直接操控',
-            '☁️ ArkClaw - 7×24云端在线',
-            '🦐 LobsterAI - 本地化数据安全',
-            '⚡ ZeroClaw - 3.4MB极致轻量',
-            '🔧 NanoClaw - 容器安全隔离',
-            '🤖 MaxClaw - 多智能体协作',
-            '📱 KimiClaw - 长期记忆助手',
-            '🏢 腾讯云Lighthouse - 企业级部署'
+        const carouselItems = [
+            // Stats
+            `<div class="flex items-center justify-center space-x-8 text-sm">
+                <span class="flex items-center"><span class="font-bold">${total}</span><span class="ml-1 opacity-80">个产品</span></span>
+                <span class="flex items-center"><span class="font-bold">${opensource}</span><span class="ml-1 opacity-80">个开源</span></span>
+                <span class="flex items-center"><span class="font-bold">${commercial}</span><span class="ml-1 opacity-80">个商业</span></span>
+            </div>`,
+            // Product intros
+            `<span class="text-sm">🚀 OpenClaw - GitHub 260K+ Stars，功能最完整的 AI Agent 开源项目</span>`,
+            `<span class="text-sm">💬 QClaw - 腾讯出品，微信直接对话远程操控</span>`,
+            `<span class="text-sm">☁️ ArkClaw - 火山引擎云端7×24小时在线</span>`,
+            `<span class="text-sm">🦐 LobsterAI - 网易有道，本地化数据安全</span>`,
+            `<span class="text-sm">⚡ ZeroClaw - Rust实现，3.4MB极致轻量</span>`,
+            `<span class="text-sm">🤖 MaxClaw - MiniMax多智能体协作平台</span>`,
+            `<span class="text-sm">📱 KimiClaw - 月之暗面，长期记忆AI助手</span>`
         ];
 
         function updateCarousel() {
-            const message = carouselMessages[state.carouselIndex % carouselMessages.length];
-            elements.productCarousel.innerHTML = `
-                <div class="carousel-item text-center">
-                    <span class="text-lg font-medium">${message}</span>
-                </div>
-            `;
+            const item = carouselItems[state.carouselIndex % carouselItems.length];
+            elements.statsBar.innerHTML = item;
             state.carouselIndex++;
         }
 
         updateCarousel();
-        state.carouselInterval = setInterval(updateCarousel, 3000);
+        state.carouselInterval = setInterval(updateCarousel, 4000);
     }
 
     /**
@@ -197,15 +196,10 @@
     }
 
     /**
-     * Update statistics display
+     * Update statistics display (now handled by carousel)
      */
     function updateStats() {
-        const opensource = state.products.filter(p => p.type === 'opensource').length;
-        const commercial = state.products.filter(p => p.type === 'commercial').length;
-
-        elements.totalCount.textContent = state.products.length;
-        elements.opensourceCount.textContent = opensource;
-        elements.commercialCount.textContent = commercial;
+        // Stats are now displayed via carousel
     }
 
     /**
@@ -289,6 +283,17 @@
                        company.includes(state.searchQuery);
             });
         }
+
+        // Sort: OpenClaw first, then commercial, then other opensource, then tools
+        filtered.sort((a, b) => {
+            if (a.id === 'openclaw') return -1;
+            if (b.id === 'openclaw') return 1;
+            if (a.type === 'commercial' && b.type !== 'commercial') return -1;
+            if (b.type === 'commercial' && a.type !== 'commercial') return 1;
+            if (a.type === 'opensource' && b.type === 'tool') return -1;
+            if (b.type === 'opensource' && a.type === 'tool') return 1;
+            return 0;
+        });
 
         state.filteredProducts = filtered;
         renderProducts();
