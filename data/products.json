@@ -133,6 +133,18 @@
       "installUrl": "https://github.com/netease-youdao/LobsterAI"
     },
     {
+      "id": "maxclaw",
+      "name": "MaxClaw",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/minimax.svg",
+      "description": "MiniMax 出品，基于 OpenClaw 技术的 AI 智能体创建平台，支持多智能体协作",
+      "company": "MiniMax",
+      "type": "commercial",
+      "tags": ["国产", "商业", "MiniMax", "云端"],
+      "status": "可用",
+      "url": "https://agent.minimaxi.com/max-claw",
+      "installUrl": "https://agent.minimaxi.com/max-claw"
+    },
+    {
       "id": "kimiclaw",
       "name": "Kimi Claw",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/moonshot.svg",
