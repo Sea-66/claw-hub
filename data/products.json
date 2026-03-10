@@ -4,13 +4,13 @@
       "id": "openclaw",
       "name": "OpenClaw",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/openclaw.svg",
-      "description": "原版龙虾，功能最完整的 AI Agent 开源项目，260K+ GitHub Stars",
+      "description": "原版龙虾，功能最完整的 AI Agent 开源项目，GitHub 历史星标第一",
       "stars": "260K+",
       "language": "TypeScript",
       "type": "opensource",
       "tags": ["原版", "开源", "TypeScript"],
       "url": "https://github.com/openclaw/openclaw",
-      "installUrl": "https://github.com/openclaw/openclaw#installation"
+      "installUrl": "https://github.com/openclaw/openclaw"
     },
     {
       "id": "nanoclaw",
@@ -22,7 +22,7 @@
       "type": "opensource",
       "tags": ["轻量", "开源", "容器"],
       "url": "https://github.com/qwibitai/nanoclaw",
-      "installUrl": "https://github.com/qwibitai/nanoclaw#readme"
+      "installUrl": "https://github.com/qwibitai/nanoclaw"
     },
     {
       "id": "zeroclaw",
@@ -34,7 +34,7 @@
       "type": "opensource",
       "tags": ["轻量", "Rust", "高性能"],
       "url": "https://github.com/zeroclaw-labs/zeroclaw",
-      "installUrl": "https://github.com/zeroclaw-labs/zeroclaw/releases"
+      "installUrl": "https://github.com/zeroclaw-labs/zeroclaw"
     },
     {
       "id": "picoclaw",
@@ -46,7 +46,7 @@
       "type": "opensource",
       "tags": ["轻量", "Go", "嵌入式"],
       "url": "https://github.com/sipeed/picoclaw",
-      "installUrl": "https://github.com/sipeed/picoclaw#installation"
+      "installUrl": "https://github.com/sipeed/picoclaw"
     },
     {
       "id": "tinyclaw",
@@ -59,18 +59,6 @@
       "tags": ["轻量", "多Agent", "开源"],
       "url": "https://github.com/TinyAGI/tinyclaw",
       "installUrl": "https://github.com/TinyAGI/tinyclaw"
-    },
-    {
-      "id": "nanobot",
-      "name": "Nanobot",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/nanobot.svg",
-      "description": "港大 HKUDS 出品，超轻量研究级框架，仅4000行代码",
-      "stars": "22K+",
-      "language": "Python",
-      "type": "opensource",
-      "tags": ["研究", "学术", "Python"],
-      "url": "https://github.com/HKUDS/nanobot",
-      "installUrl": "https://github.com/HKUDS/nanobot"
     },
     {
       "id": "ironclaw",
@@ -88,19 +76,19 @@
       "id": "workbuddy",
       "name": "WorkBuddy",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencent.svg",
-      "description": "腾讯版免部署小龙虾，零配置下载即用，办公场景全覆盖，5000 Credits 无门槛体验",
+      "description": "腾讯版免部署小龙虾，零配置下载即用，兼容OpenClaw技能",
       "company": "腾讯",
       "type": "commercial",
       "tags": ["国产", "商业", "腾讯", "免部署"],
       "status": "可用",
-      "url": "https://www.codebuddy.cn/work/",
-      "installUrl": "https://www.codebuddy.cn/work/"
+      "url": "https://workbuddy.qq.com/",
+      "installUrl": "https://workbuddy.qq.com/"
     },
     {
       "id": "qclaw",
       "name": "QClaw",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/qq.svg",
-      "description": "腾讯出品，可通过微信对话远程操控，Windows/Mac一键安装，覆盖5000+skills",
+      "description": "腾讯出品，可通过微信对话远程操控，Windows/Mac一键安装",
       "company": "腾讯",
       "type": "commercial",
       "tags": ["国产", "商业", "腾讯", "微信"],
@@ -112,7 +100,7 @@
       "id": "lighthouse",
       "name": "腾讯云 Lighthouse",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencentcloud.svg",
-      "description": "云端7×24小时稳定在线，支持QQ/企微双入口操控，一个QQ号能养5只小龙虾",
+      "description": "云端7×24小时稳定在线，支持QQ/企微双入口操控OpenClaw",
       "company": "腾讯云",
       "type": "commercial",
       "tags": ["国产", "商业", "腾讯", "云端"],
@@ -124,60 +112,13 @@
       "id": "adp",
       "name": "智能体开发平台 ADP",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencentcloud.svg",
-      "description": "企业级解决方案，几分钟完成部署，秒级接入企业微信，部门层级权限划分",
+      "description": "腾讯云企业级解决方案，一键部署OpenClaw，秒级接入企业微信",
       "company": "腾讯云",
       "type": "commercial",
       "tags": ["国产", "商业", "腾讯", "企业级"],
       "status": "可用",
       "url": "https://adp.tencentcloud.com/zh",
       "installUrl": "https://cloud.tencent.com/document/product/1759/128832"
-    },
-    {
-      "id": "tencent-desktop",
-      "name": "腾讯云桌面",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencentcloud.svg",
-      "description": "云端Windows环境，像用普通电脑一样配置，支持Linux/Windows双系统",
-      "company": "腾讯云",
-      "type": "commercial",
-      "tags": ["国产", "商业", "腾讯", "云端"],
-      "status": "可用",
-      "url": "https://cloud.tencent.com/developer/article/2628828",
-      "installUrl": "https://cloud.tencent.com/product/cvd"
-    },
-    {
-      "id": "skillhub-cn",
-      "name": "SkillHub 技能社区",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencent.svg",
-      "description": "专为国内用户优化，国内镜像加速，内置1.3万个本土化技能一键调用",
-      "company": "腾讯",
-      "type": "tool",
-      "tags": ["技能社区", "本土化", "腾讯"],
-      "url": "https://clawhub.ai",
-      "installUrl": "https://clawhub.ai"
-    },
-    {
-      "id": "pc-manager",
-      "name": "腾讯电脑管家（龙虾管家）",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencent.svg",
-      "description": "18.0版本新增AI安全沙箱功能，一键为Agent工具开启隔离运行环境",
-      "company": "腾讯",
-      "type": "tool",
-      "tags": ["安全", "沙箱", "腾讯"],
-      "status": "可用",
-      "url": "https://pcmanager.qq.com/",
-      "installUrl": "https://pcmanager.qq.com/"
-    },
-    {
-      "id": "agent-security",
-      "name": "腾讯云 AI Agent安全中心",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencentcloud.svg",
-      "description": "云端安全监控，拦截高风险指令和带漏洞插件，保障AI行为规范",
-      "company": "腾讯云",
-      "type": "tool",
-      "tags": ["安全", "云端", "企业级"],
-      "status": "内测中",
-      "url": "https://cloud.tencent.com/",
-      "installUrl": "https://cloud.tencent.com/"
     },
     {
       "id": "lobsterai",
@@ -192,88 +133,6 @@
       "installUrl": "https://github.com/netease-youdao/LobsterAI"
     },
     {
-      "id": "miclaw",
-      "name": "小米 AI",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/xiaomi.svg",
-      "description": "小米出品，MiMo大模型，人车家全生态，小米17系列首发",
-      "company": "小米",
-      "type": "commercial",
-      "tags": ["国产", "商业", "小米", "IoT"],
-      "status": "封测中",
-      "url": "https://web.vip.miui.com/page/info/mio/mio/detail?postId=53167929",
-      "installUrl": "https://web.vip.miui.com/page/info/mio/mio/detail?postId=53167929"
-    },
-    {
-      "id": "kimi",
-      "name": "Kimi",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/moonshot.svg",
-      "description": "月之暗面出品，K2.5模型支持视觉编程和智能体协作",
-      "company": "月之暗面",
-      "type": "commercial",
-      "tags": ["国产", "商业", "Kimi", "即开即用"],
-      "status": "可用",
-      "url": "https://www.kimi.com/",
-      "installUrl": "https://www.kimi.com/"
-    },
-    {
-      "id": "minimax",
-      "name": "海螺AI",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/minimax.svg",
-      "description": "MiniMax出品，多模态大模型，视频生成能力，服务2亿+用户",
-      "company": "MiniMax",
-      "type": "commercial",
-      "tags": ["国产", "商业", "MiniMax", "云端"],
-      "status": "可用",
-      "url": "https://www.minimaxi.com/",
-      "installUrl": "https://hailuoai.com/"
-    },
-    {
-      "id": "qwen",
-      "name": "通义千问",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/qwen.svg",
-      "description": "阿里出品，通义千问+钉钉Agent OS，企业级解决方案",
-      "company": "阿里",
-      "type": "commercial",
-      "tags": ["国产", "商业", "阿里", "企业级"],
-      "status": "可用",
-      "url": "https://tongyi.aliyun.com/",
-      "installUrl": "https://tongyi.aliyun.com/"
-    },
-    {
-      "id": "coze",
-      "name": "扣子 Coze",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/coze.svg",
-      "description": "字节跳动出品，AI办公平台，支持PPT、视频、Agent开发",
-      "company": "字节跳动",
-      "type": "commercial",
-      "tags": ["国产", "商业", "字节", "低代码"],
-      "status": "可用",
-      "url": "https://www.coze.cn/",
-      "installUrl": "https://www.coze.cn/"
-    },
-    {
-      "id": "shizai-agent",
-      "name": "实在Agent",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/indeed.svg",
-      "description": "实在智能出品，AI+RPA行业引领者，企业级中国版",
-      "company": "实在智能",
-      "type": "commercial",
-      "tags": ["国产", "商业", "企业级", "RPA"],
-      "status": "可用",
-      "url": "https://www.ai-indeed.com/",
-      "installUrl": "https://www.ai-indeed.com/"
-    },
-    {
-      "id": "oneclaw",
-      "name": "OneClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/oneclaw.svg",
-      "description": "OpenClaw 一键安装包，无需命令行，1分钟上手",
-      "type": "tool",
-      "tags": ["工具", "安装包", "一键部署"],
-      "url": "https://oneclaw.cn",
-      "installUrl": "https://oneclaw.cn"
-    },
-    {
       "id": "clawhub",
       "name": "ClawHub",
       "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/clawhub.svg",
@@ -284,62 +143,22 @@
       "installUrl": "https://clawhub.ai"
     },
     {
-      "id": "clawsec",
-      "name": "ClawSec",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/clawsec.svg",
-      "description": "龙虾安全技能套件，渗透测试与安全审计工具集",
+      "id": "pc-manager",
+      "name": "龙虾管家",
+      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/tencent.svg",
+      "description": "腾讯电脑管家18.0，AI安全沙箱，为OpenClaw开启隔离运行环境",
+      "company": "腾讯",
       "type": "tool",
-      "tags": ["安全", "工具", "渗透测试"],
-      "url": "https://github.com/prompt-security/clawsec",
-      "installUrl": "https://github.com/prompt-security/clawsec"
-    },
-    {
-      "id": "devin",
-      "name": "Devin",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/devin.svg",
-      "description": "Cognition 出品，首个AI软件工程师，自主编码测试部署",
-      "company": "Cognition",
-      "type": "tool",
-      "tags": ["AI工程师", "自动化", "国际"],
-      "url": "https://devin.ai/",
-      "installUrl": "https://devin.ai/"
-    },
-    {
-      "id": "cursor",
-      "name": "Cursor",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/cursor.svg",
-      "description": "AI代码编辑器，VS Code增强版，支持Claude/GPT-4o",
-      "company": "Anysphere",
-      "type": "tool",
-      "tags": ["代码编辑", "IDE", "国际"],
-      "url": "https://cursor.sh/",
-      "installUrl": "https://cursor.sh/"
-    },
-    {
-      "id": "molili",
-      "name": "Molili",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/molili.svg",
-      "description": "中文版开箱即用，本土化优化",
-      "type": "tool",
-      "tags": ["中文", "本土化", "开箱即用"],
-      "url": "#",
-      "installUrl": "#"
-    },
-    {
-      "id": "autoclaw",
-      "name": "AutoClaw",
-      "icon": "https://unpkg.com/@lobehub/icons-static-svg/files/autoclaw.svg",
-      "description": "自演化 Agent 经济，自动化任务编排",
-      "type": "tool",
-      "tags": ["自动化", "Agent经济", "编排"],
-      "url": "https://lablab.ai/autoclaw",
-      "installUrl": "https://lablab.ai/autoclaw"
+      "tags": ["安全", "沙箱", "腾讯"],
+      "status": "可用",
+      "url": "https://pcmanager.qq.com/",
+      "installUrl": "https://pcmanager.qq.com/"
     }
   ],
   "categories": [
     { "id": "all", "name": "全部", "icon": "🌐" },
-    { "id": "opensource", "name": "开源原版", "icon": "📖" },
-    { "id": "commercial", "name": "国产商业", "icon": "🏢" },
-    { "id": "tool", "name": "工具/系统", "icon": "🛠️" }
+    { "id": "opensource", "name": "开源版本", "icon": "📖" },
+    { "id": "commercial", "name": "商业版本", "icon": "🏢" },
+    { "id": "tool", "name": "工具/平台", "icon": "🛠️" }
   ]
 }
