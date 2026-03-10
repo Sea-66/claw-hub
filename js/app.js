@@ -27,7 +27,10 @@
         mobileSearchInput: document.getElementById('mobileSearchInput'),
         themeToggle: document.getElementById('themeToggle'),
         emptyState: document.getElementById('emptyState'),
-        statsBar: document.getElementById('statsBar')
+        statsBar: document.getElementById('statsBar'),
+        communityBtn: document.getElementById('communityBtn'),
+        qrModal: document.getElementById('qrModal'),
+        closeModal: document.getElementById('closeModal')
     };
 
     /**
@@ -213,6 +216,25 @@
         elements.searchInput.addEventListener('input', handleSearch);
         elements.mobileSearchInput.addEventListener('input', handleSearch);
 
+        // Community button - QR modal
+        if (elements.communityBtn) {
+            elements.communityBtn.addEventListener('click', openQRModal);
+        }
+
+        // Close modal
+        if (elements.closeModal) {
+            elements.closeModal.addEventListener('click', closeQRModal);
+        }
+
+        // Close modal on backdrop click
+        if (elements.qrModal) {
+            elements.qrModal.addEventListener('click', (e) => {
+                if (e.target === elements.qrModal) {
+                    closeQRModal();
+                }
+            });
+        }
+
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
             // Ctrl/Cmd + K to focus search
@@ -220,7 +242,29 @@
                 e.preventDefault();
                 elements.searchInput.focus();
             }
+            // Escape to close modal
+            if (e.key === 'Escape' && !elements.qrModal.classList.contains('hidden')) {
+                closeQRModal();
+            }
         });
+    }
+
+    /**
+     * Open QR code modal
+     */
+    function openQRModal() {
+        elements.qrModal.classList.remove('hidden');
+        elements.qrModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    /**
+     * Close QR code modal
+     */
+    function closeQRModal() {
+        elements.qrModal.classList.add('hidden');
+        elements.qrModal.classList.remove('flex');
+        document.body.style.overflow = '';
     }
 
     /**

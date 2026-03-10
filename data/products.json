@@ -75,14 +75,14 @@
     {
       "id": "workbuddy",
       "name": "WorkBuddy",
-      "icon": "https://workbuddy.qq.com/favicon.ico",
-      "description": "腾讯版免部署小龙虾，零配置下载即用，兼容OpenClaw技能",
-      "company": "腾讯",
+      "icon": "https://www.codebuddy.cn/favicon.ico",
+      "description": "AI 原生桌面智能体工作台，自然语言驱动办公自动化",
+      "company": "CodeBuddy",
       "type": "commercial",
-      "tags": ["国产", "商业", "腾讯", "免部署"],
+      "tags": ["国产", "商业", "办公", "自动化"],
       "status": "可用",
-      "url": "https://workbuddy.qq.com/",
-      "installUrl": "https://workbuddy.qq.com/"
+      "url": "https://www.codebuddy.cn/work/",
+      "installUrl": "https://www.codebuddy.cn/work/"
     },
     {
       "id": "qclaw",
@@ -95,30 +95,6 @@
       "status": "可用",
       "url": "https://claw.guanjia.qq.com/",
       "installUrl": "https://claw.guanjia.qq.com/"
-    },
-    {
-      "id": "lighthouse",
-      "name": "腾讯云 Lighthouse",
-      "icon": "https://cloudcache.tencent-cloud.com/qcloud/app/resource/ac/safari-pinned-tab.svg",
-      "description": "云端7×24小时稳定在线，支持QQ/企微双入口操控OpenClaw",
-      "company": "腾讯云",
-      "type": "commercial",
-      "tags": ["国产", "商业", "腾讯", "云端"],
-      "status": "可用",
-      "url": "https://cloud.tencent.com/developer/article/2634683",
-      "installUrl": "https://cloud.tencent.com/product/lighthouse"
-    },
-    {
-      "id": "adp",
-      "name": "智能体开发平台 ADP",
-      "icon": "https://cloudcache.tencent-cloud.com/qcloud/app/resource/ac/safari-pinned-tab.svg",
-      "description": "腾讯云企业级解决方案，一键部署OpenClaw，秒级接入企业微信",
-      "company": "腾讯云",
-      "type": "commercial",
-      "tags": ["国产", "商业", "腾讯", "企业级"],
-      "status": "可用",
-      "url": "https://adp.tencentcloud.com/zh",
-      "installUrl": "https://cloud.tencent.com/document/product/1759/128832"
     },
     {
       "id": "lobsterai",
@@ -183,7 +159,7 @@
     {
       "id": "clawhub",
       "name": "ClawHub",
-      "icon": "https://clawhub.ai/favicon.ico",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>",
       "description": "OpenClaw 官方技能市场，13000+ 社区技能插件",
       "type": "tool",
       "tags": ["技能市场", "插件", "社区"],

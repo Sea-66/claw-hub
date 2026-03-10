@@ -64,6 +64,16 @@
                     </div>
                 </div>
 
+                <!-- Community Button -->
+                <button
+                    id="communityBtn"
+                    class="flex items-center gap-2 px-4 py-2 rounded-lg bg-claw-500 hover:bg-claw-600 text-white transition font-medium text-sm"
+                    title="养虾交流群"
+                >
+                    <span>💬</span>
+                    <span class="hidden sm:inline">养虾交流群</span>
+                </button>
+
                 <!-- Theme Toggle -->
                 <button
                     id="themeToggle"
@@ -147,6 +157,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 max-w-sm mx-4 relative">
+            <button id="closeModal" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-2xl">&times;</button>
+            <div class="text-center">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🦞 养虾交流群</h3>
+                <div class="bg-gray-100 dark:bg-gray-700 rounded-xl p-4 mb-4">
+                    <!-- 飞书二维码占位 - 请替换为实际的二维码图片URL -->
+                    <div class="w-48 h-48 mx-auto flex items-center justify-center bg-white dark:bg-gray-600 rounded-lg">
+                        <img src="https://s2.loli.net/2025/03/10/FeishuQR.png" alt="飞书群二维码" class="w-full h-full object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="hidden flex-col items-center text-gray-500 dark:text-gray-400">
+                            <span class="text-4xl mb-2">📱</span>
+                            <span class="text-sm">扫码加入飞书群</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400">扫描二维码加入养虾交流群</p>
+            </div>
+        </div>
+    </div>
 
     <script src="js/api.js"></script>
     <script src="js/app.js"></script>
