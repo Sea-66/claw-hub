@@ -75,7 +75,7 @@
     {
       "id": "hiclaw",
       "name": "HiClaw",
-      "icon": "https://img.alicdn.com/tfs/TB1_uT8a5L2gK0jSZFmXXc7iXXa-32-32.png",
+      "icon": "https://www.alibaba.com/favicon.ico",
       "description": "阿里云出品，基于 Higress 的企业级 AI 网关智能体平台",
       "company": "阿里云",
       "type": "commercial",
@@ -111,7 +111,7 @@
     {
       "id": "workbuddy",
       "name": "WorkBuddy",
-      "icon": "https://www.tencent.com/favicon.ico",
+      "icon": "https://im.qq.com/favicon.ico",
       "description": "AI 原生桌面智能体工作台，自然语言驱动办公自动化",
       "company": "CodeBuddy",
       "type": "commercial",
