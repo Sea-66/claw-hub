@@ -111,7 +111,7 @@
     {
       "id": "workbuddy",
       "name": "WorkBuddy",
-      "icon": "https://im.qq.com/favicon.ico",
+      "icon": "images/workbuddy.png",
       "description": "AI 原生桌面智能体工作台，自然语言驱动办公自动化",
       "company": "CodeBuddy",
       "type": "commercial",
