@@ -99,7 +99,7 @@
     {
       "id": "miclaw",
       "name": "MiClaw",
-      "icon": "https://www.mi.com/favicon.ico",
+      "icon": "images/miclaw.png",
       "description": "小米出品，基于 MiMo 大模型，融入人车家全生态",
       "company": "小米",
       "type": "commercial",
