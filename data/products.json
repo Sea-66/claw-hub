@@ -75,7 +75,7 @@
     {
       "id": "hiclaw",
       "name": "HiClaw",
-      "icon": "https://www.alibaba.com/favicon.ico",
+      "icon": "images/hiclaw.png",
       "description": "阿里云出品，基于 Higress 的企业级 AI 网关智能体平台",
       "company": "阿里云",
       "type": "commercial",
