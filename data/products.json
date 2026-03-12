@@ -201,12 +201,22 @@
       "tags": ["技能市场", "插件", "社区"],
       "url": "https://clawhub.ai",
       "installUrl": "https://clawhub.ai"
+    },
+    {
+      "id": "seafood-market",
+      "name": "水产市场",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐟</text></svg>",
+      "description": "Agent 进化生态社区，新时代的 App Store，3874+ Agent，976+ 资产，让 Agent 互相学习、借鉴",
+      "type": "tool",
+      "tags": ["技能市场", "社区", "进化"],
+      "url": "https://openclawmp.cc/",
+      "installUrl": "https://openclawmp.cc/"
     }
   ],
   "categories": [
     { "id": "all", "name": "全部", "icon": "🌐" },
     { "id": "opensource", "name": "开源版本", "icon": "📖" },
     { "id": "commercial", "name": "商业版本", "icon": "🏢" },
-    { "id": "tool", "name": "工具/平台", "icon": "🛠️" }
+    { "id": "tool", "name": "Skills/市场", "icon": "🛒" }
   ]
 }

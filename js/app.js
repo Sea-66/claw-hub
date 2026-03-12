@@ -472,7 +472,7 @@
         const typeConfig = {
             opensource: { label: '开源', class: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' },
             commercial: { label: '商业', class: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' },
-            tool: { label: '工具', class: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300' }
+            tool: { label: 'Skills/市场', class: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300' }
         };
 
         const config = typeConfig[product.type] || typeConfig.tool;
