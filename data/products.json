@@ -79,6 +79,47 @@
       "installUrl": "https://github.com/DenchHQ/ironclaw"
     },
     {
+      "id": "siyuan",
+      "name": "思源笔记",
+      "nameEn": "SiYuan",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
+      "description": "隐私优先、自托管的开源知识管理软件，支持 chatgpt/ollama/deepseek/openclaw",
+      "descriptionEn": "Privacy-first, self-hosted open-source knowledge management, supports chatgpt/ollama/deepseek/openclaw",
+      "stars": "41.8K+",
+      "language": "TypeScript",
+      "type": "opensource",
+      "tags": ["知识管理", "开源", "笔记", "OpenClaw"],
+      "url": "https://github.com/siyuan-note/siyuan",
+      "installUrl": "https://github.com/siyuan-note/siyuan"
+    },
+    {
+      "id": "cc-switch",
+      "name": "CC Switch",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
+      "description": "跨平台桌面 AI 助手工具，支持 Claude Code, Codex, OpenCode, openclaw & Gemini CLI",
+      "descriptionEn": "Cross-platform desktop AI assistant tool for Claude Code, Codex, OpenCode, openclaw & Gemini CLI",
+      "stars": "27.5K+",
+      "language": "Rust",
+      "type": "opensource",
+      "tags": ["桌面工具", "开源", "Rust", "OpenClaw"],
+      "url": "https://github.com/farion1231/cc-switch",
+      "installUrl": "https://github.com/farion1231/cc-switch"
+    },
+    {
+      "id": "aionui",
+      "name": "AionUi",
+      "nameEn": "AionUi (iOfficeAI)",
+      "icon": "https://github.githubassets.com/favicons/favicon.svg",
+      "description": "免费、本地、开源的 24/7 Cowork 应用和 OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode",
+      "descriptionEn": "Free, local, open-source 24/7 Cowork app and OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode, Qwen Code, Goose CLI, Auggie",
+      "stars": "18.6K+",
+      "language": "TypeScript",
+      "type": "opensource",
+      "tags": ["开源", "协作", "OpenClaw"],
+      "url": "https://github.com/iOfficeAI/AionUi",
+      "installUrl": "https://github.com/iOfficeAI/AionUi"
+    },
+    {
       "id": "hiclaw",
       "name": "HiClaw",
       "icon": "images/hiclaw.png",
@@ -240,12 +281,134 @@
       "tags": ["技能市场", "社区", "进化"],
       "url": "https://openclawmp.cc/",
       "installUrl": "https://openclawmp.cc/"
+    },
+    {
+      "id": "claude-import-memory",
+      "name": "Claude Import Memory",
+      "nameEn": "Claude Import Memory",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>",
+      "description": "ChatGPT 对话导入 Claude，460票 Product Hunt 今日第一",
+      "descriptionEn": "Import ChatGPT conversations to Claude, #1 Product Hunt today with 460 votes",
+      "stars": "460票",
+      "type": "ai",
+      "tags": ["AI工具", "数据迁移", "跨平台"],
+      "url": "https://www.producthunt.com/posts/claude-import-memory",
+      "installUrl": "https://www.producthunt.com/posts/claude-import-memory"
+    },
+    {
+      "id": "notra",
+      "name": "Notra",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>",
+      "description": "日常工作转可发布内容，293票 Product Hunt 第二名",
+      "descriptionEn": "Turn daily work into publishable content, #2 Product Hunt with 293 votes",
+      "stars": "293票",
+      "type": "ai",
+      "tags": ["AI工具", "内容创作", "效率"],
+      "url": "https://www.producthunt.com/posts/notra",
+      "installUrl": "https://www.producthunt.com/posts/notra"
+    },
+    {
+      "id": "openfang",
+      "name": "OpenFang",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦊</text></svg>",
+      "description": "开源 Agent 操作系统，210票 Product Hunt 第三名",
+      "descriptionEn": "Open-source Agent Operating System, #3 Product Hunt with 210 votes",
+      "stars": "210票",
+      "type": "ai",
+      "tags": ["AI工具", "开源", "Agent系统"],
+      "url": "https://www.producthunt.com/posts/openfang",
+      "installUrl": "https://www.producthunt.com/posts/openfang"
+    },
+    {
+      "id": "voicr",
+      "name": "Voicr",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>",
+      "description": "语音转 polished 文本，197票 Product Hunt 第四名",
+      "descriptionEn": "Voice to polished text, #4 Product Hunt with 197 votes",
+      "stars": "197票",
+      "type": "ai",
+      "tags": ["AI工具", "语音", "文字处理"],
+      "url": "https://www.producthunt.com/posts/voicr",
+      "installUrl": "https://www.producthunt.com/posts/voicr"
+    },
+    {
+      "id": "simplora",
+      "name": "Simplora 2.0",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>",
+      "description": "AI 会议全流程助手，152票 Product Hunt 第五名",
+      "descriptionEn": "AI meeting full-process assistant, #5 Product Hunt with 152 votes",
+      "stars": "152票",
+      "type": "ai",
+      "tags": ["AI工具", "会议", "效率"],
+      "url": "https://www.producthunt.com/posts/simplora-2-0",
+      "installUrl": "https://www.producthunt.com/posts/simplora-2-0"
+    },
+    {
+      "id": "openai-websocket-mode",
+      "name": "OpenAI WebSocket Mode",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>",
+      "description": "持久化 AI 连接，快 40%，131票 Product Hunt 第六名",
+      "descriptionEn": "Persistent AI connection, 40% faster, #6 Product Hunt with 131 votes",
+      "stars": "131票",
+      "type": "ai",
+      "tags": ["AI工具", "性能优化", "连接"],
+      "url": "https://www.producthunt.com/posts/openai-websocket-mode",
+      "installUrl": "https://www.producthunt.com/posts/openai-websocket-mode"
+    },
+    {
+      "id": "bu",
+      "name": "BU",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>",
+      "description": "OpenClaw 云端版，125票 Product Hunt 第七名",
+      "descriptionEn": "OpenClaw cloud version, #7 Product Hunt with 125 votes",
+      "stars": "125票",
+      "type": "ai",
+      "tags": ["AI工具", "云端", "OpenClaw"],
+      "url": "https://www.producthunt.com/posts/bu",
+      "installUrl": "https://www.producthunt.com/posts/bu"
+    },
+    {
+      "id": "octrafic",
+      "name": "Octrafic",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>",
+      "description": "自然语言测试 API，120票 Product Hunt 第八名",
+      "descriptionEn": "Natural language testing API, #8 Product Hunt with 120 votes",
+      "stars": "120票",
+      "type": "ai",
+      "tags": ["AI工具", "API", "测试"],
+      "url": "https://www.producthunt.com/posts/octrafic",
+      "installUrl": "https://www.producthunt.com/posts/octrafic"
+    },
+    {
+      "id": "epismo-skills",
+      "name": "Epismo Skills",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>",
+      "description": "Agent 可靠性工具链，110票 Product Hunt 第九名",
+      "descriptionEn": "Agent reliability toolchain, #9 Product Hunt with 110 votes",
+      "stars": "110票",
+      "type": "ai",
+      "tags": ["AI工具", "Agent", "工具链"],
+      "url": "https://www.producthunt.com/posts/epismo-skills",
+      "installUrl": "https://www.producthunt.com/posts/epismo-skills"
+    },
+    {
+      "id": "hearica",
+      "name": "Hearica",
+      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>",
+      "description": "电脑音频实时转字幕，Product Hunt 第十名",
+      "descriptionEn": "Real-time computer audio to subtitles, #10 Product Hunt",
+      "stars": "",
+      "type": "ai",
+      "tags": ["AI工具", "语音", "字幕"],
+      "url": "https://www.producthunt.com/posts/hearica",
+      "installUrl": "https://www.producthunt.com/posts/hearica"
     }
   ],
   "categories": [
     { "id": "all", "name": "全部", "nameEn": "All", "icon": "🌐" },
     { "id": "opensource", "name": "开源版本", "nameEn": "Open Source", "icon": "📖" },
     { "id": "commercial", "name": "商业版本", "nameEn": "Commercial", "icon": "🏢" },
-    { "id": "tool", "name": "Skills/市场", "nameEn": "Skills/Market", "icon": "🛒" }
+    { "id": "tool", "name": "Skills/市场", "nameEn": "Skills/Market", "icon": "🛒" },
+    { "id": "ai", "name": "AI产品", "nameEn": "AI Products", "icon": "🤖" }
   ]
 }

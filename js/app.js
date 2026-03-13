@@ -502,7 +502,8 @@
             all: isEn ? 'All' : '全部',
             opensource: isEn ? 'Open Source' : '开源版本',
             commercial: isEn ? 'Commercial' : '商业版本',
-            tool: isEn ? 'Skills/Market' : 'Skills/市场'
+            tool: isEn ? 'Skills/Market' : 'Skills/市场',
+            ai: isEn ? 'AI Products' : 'AI产品'
         };
 
         elements.categoryTabs.innerHTML = state.categories.map(cat => `
