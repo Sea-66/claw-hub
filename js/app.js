@@ -17,7 +17,6 @@
         votes: {}, // Store votes { productId: { up: count, down: count, userVote: 'up'|'down'|null } }
         carouselIndex: 0,
         carouselInterval: null,
-        currentLang: 'zh'
     };
 
     // DOM Elements
@@ -27,8 +26,6 @@
         searchInput: document.getElementById('searchInput'),
         mobileSearchInput: document.getElementById('mobileSearchInput'),
         themeToggle: document.getElementById('themeToggle'),
-        langToggle: document.getElementById('langToggle'),
-        langText: document.getElementById('langText'),
         emptyState: document.getElementById('emptyState'),
         statsBar: document.getElementById('statsBar'),
         communityBtn: document.getElementById('communityBtn'),
@@ -43,9 +40,6 @@
         // Initialize theme
         initTheme();
 
-        // Initialize language
-        initLanguage();
-
         // Load votes from localStorage
         loadVotes();
 
@@ -58,7 +52,6 @@
         // Initial render
         renderCategories();
         filterAndRender();
-        updatePageContent();
 
         // Start carousel
         startCarousel();
@@ -79,40 +72,21 @@
         const opensource = state.products.filter(p => p.type === 'opensource').length;
         const commercial = state.products.filter(p => p.type === 'commercial').length;
 
-        const isEn = state.currentLang === 'en';
-        const statsProducts = isEn ? 'Products' : '个产品';
-        const statsOpensource = isEn ? 'Open Source' : '个开源';
-        const statsCommercial = isEn ? 'Commercial' : '个商业';
-
         const carouselItems = [
             // Stats
             `<div class="flex items-center justify-center space-x-8 text-sm">
-                <span class="flex items-center"><span class="font-bold">${total}</span><span class="ml-1 opacity-80">${statsProducts}</span></span>
-                <span class="flex items-center"><span class="font-bold">${opensource}</span><span class="ml-1 opacity-80">${statsOpensource}</span></span>
-                <span class="flex items-center"><span class="font-bold">${commercial}</span><span class="ml-1 opacity-80">${statsCommercial}</span></span>
+                <span class="flex items-center"><span class="font-bold">${total}</span><span class="ml-1 opacity-80">个产品</span></span>
+                <span class="flex items-center"><span class="font-bold">${opensource}</span><span class="ml-1 opacity-80">个开源</span></span>
+                <span class="flex items-center"><span class="font-bold">${commercial}</span><span class="ml-1 opacity-80">个商业</span></span>
             </div>`,
             // Product intros
-            isEn
-                ? `<span class="text-sm">🚀 OpenClaw - GitHub 260K+ Stars, the most complete AI Agent open-source project</span>`
-                : `<span class="text-sm">🚀 OpenClaw - GitHub 260K+ Stars，功能最完整的 AI Agent 开源项目</span>`,
-            isEn
-                ? `<span class="text-sm">💬 QClaw - Tencent, control remotely via WeChat</span>`
-                : `<span class="text-sm">💬 QClaw - 腾讯出品，微信直接对话远程操控</span>`,
-            isEn
-                ? `<span class="text-sm">☁️ ArkClaw - Volcengine, 7x24 cloud service</span>`
-                : `<span class="text-sm">☁️ ArkClaw - 火山引擎云端7×24小时在线</span>`,
-            isEn
-                ? `<span class="text-sm">🦐 LobsterAI - NetEase, local deployment for data security</span>`
-                : `<span class="text-sm">🦐 LobsterAI - 网易有道，本地化数据安全</span>`,
-            isEn
-                ? `<span class="text-sm">⚡ ZeroClaw - Rust, 3.4MB ultra-lightweight</span>`
-                : `<span class="text-sm">⚡ ZeroClaw - Rust实现，3.4MB极致轻量</span>`,
-            isEn
-                ? `<span class="text-sm">🤖 MaxClaw - MiniMax multi-agent collaboration platform</span>`
-                : `<span class="text-sm">🤖 MaxClaw - MiniMax多智能体协作平台</span>`,
-            isEn
-                ? `<span class="text-sm">📱 KimiClaw - Moonshot, long-term memory AI assistant</span>`
-                : `<span class="text-sm">📱 KimiClaw - 月之暗面，长期记忆AI助手</span>`
+            `<span class="text-sm">🚀 OpenClaw - GitHub 260K+ Stars，功能最完整的 AI Agent 开源项目</span>`,
+            `<span class="text-sm">💬 QClaw - 腾讯出品，微信直接对话远程操控</span>`,
+            `<span class="text-sm">☁️ ArkClaw - 火山引擎云端7×24小时在线</span>`,
+            `<span class="text-sm">🦐 LobsterAI - 网易有道，本地化数据安全</span>`,
+            `<span class="text-sm">⚡ ZeroClaw - Rust实现，3.4MB极致轻量</span>`,
+            `<span class="text-sm">🤖 MaxClaw - MiniMax多智能体协作平台</span>`,
+            `<span class="text-sm">📱 KimiClaw - 月之暗面，长期记忆AI助手</span>`
         ];
 
         function updateCarousel() {
@@ -215,113 +189,6 @@
     }
 
     /**
-     * Initialize language from localStorage
-     */
-    function initLanguage() {
-        const savedLang = localStorage.getItem('clawhub-lang') || 'zh';
-        state.currentLang = savedLang;
-        i18n.setLang(savedLang);
-        updateLangButton();
-        updateHtmlLang();
-    }
-
-    /**
-     * Update language button text
-     */
-    function updateLangButton() {
-        const langText = document.getElementById('langText');
-        if (langText) {
-            langText.textContent = state.currentLang === 'zh' ? 'EN' : '中文';
-        }
-        // Also save to localStorage
-        localStorage.setItem('clawhub-lang', state.currentLang);
-    }
-
-    /**
-     * Update HTML lang attribute
-     */
-    function updateHtmlLang() {
-        document.documentElement.lang = state.currentLang === 'zh' ? 'zh-CN' : 'en';
-    }
-
-    /**
-     * Toggle language
-     */
-    function toggleLanguage() {
-        console.log('Toggle language called, current:', state.currentLang);
-        state.currentLang = state.currentLang === 'zh' ? 'en' : 'zh';
-        console.log('New language:', state.currentLang);
-
-        i18n.setLang(state.currentLang);
-        updateLangButton();
-        updateHtmlLang();
-        updatePageContent();
-
-        // Re-render products and categories
-        renderCategories();
-        filterAndRender();
-        startCarousel();
-    }
-
-    /**
-     * Update page content with current language
-     */
-    function updatePageContent() {
-        const lang = state.currentLang;
-
-        // Update page title and meta
-        document.title = i18n.t('title');
-        document.querySelector('meta[name="description"]')?.setAttribute('content', i18n.t('description'));
-        document.querySelector('meta[name="keywords"]')?.setAttribute('content', i18n.t('keywords'));
-
-        // Update header
-        const siteSlogan = document.querySelector('header p.text-xs');
-        if (siteSlogan) {
-            siteSlogan.textContent = i18n.t('siteSlogan');
-        }
-
-        // Update search placeholders
-        const searchInputs = document.querySelectorAll('#searchInput, #mobileSearchInput');
-        searchInputs.forEach(input => {
-            input.placeholder = i18n.t('searchPlaceholder');
-        });
-
-        // Update community button
-        const communityBtnSpan = document.querySelector('#communityBtn span:last-child');
-        if (communityBtnSpan) {
-            communityBtnSpan.textContent = i18n.t('community');
-        }
-
-        // Update empty state
-        const emptyTitle = document.querySelector('#emptyState h3');
-        const emptyDesc = document.querySelector('#emptyState p');
-        if (emptyTitle) emptyTitle.textContent = i18n.t('emptyTitle');
-        if (emptyDesc) emptyDesc.textContent = i18n.t('emptyDesc');
-
-        // Update footer
-        const footerSlogan = document.querySelector('footer .text-gray-600, footer .dark\\:text-gray-400');
-        if (footerSlogan && footerSlogan.textContent.includes('ClawHub -')) {
-            footerSlogan.textContent = i18n.t('footerSlogan');
-        }
-
-        const footerCopyright = document.querySelector('footer .text-center.text-sm p');
-        if (footerCopyright) {
-            footerCopyright.textContent = i18n.t('footerCopyright');
-        }
-
-        // Update modal
-        const modalTitle = document.querySelector('#qrModal h3');
-        if (modalTitle) {
-            modalTitle.textContent = '🦞 ' + i18n.t('modalTitle');
-        }
-
-        const modalDesc = document.querySelector('#qrModal .text-sm.text-gray-500, #qrModal .text-sm.dark\\:text-gray-400');
-        if (modalDesc && modalDesc.textContent.includes('扫描')) {
-            modalDesc.textContent = i18n.t('modalDesc');
-        }
-    }
-
-    /**
      * Load products from API
      */
     async function loadProducts() {
@@ -349,18 +216,6 @@
     function setupEventListeners() {
         // Theme toggle
         elements.themeToggle.addEventListener('click', toggleTheme);
-
-        // Language toggle
-        const langToggle = document.getElementById('langToggle');
-        console.log('langToggle element:', langToggle);
-        if (langToggle) {
-            langToggle.addEventListener('click', function(e) {
-                console.log('Language button clicked!');
-                toggleLanguage();
-            });
-        } else {
-            console.error('langToggle element not found!');
-        }
 
         // Search inputs
         elements.searchInput.addEventListener('input', handleSearch);
@@ -497,13 +352,11 @@
      * Render category tabs
      */
     function renderCategories() {
-        const isEn = state.currentLang === 'en';
         const categoryNames = {
-            all: isEn ? 'All' : '全部',
-            opensource: isEn ? 'Open Source Lobster' : '开源龙虾',
-            commercial: isEn ? 'Commercial Lobster' : '商业龙虾',
-            tool: isEn ? 'Skills/Market' : 'Skills/市场',
-            ai: isEn ? 'AI Products' : 'AI产品'
+            all: '全部',
+            opensource: '开源龙虾',
+            commercial: '商业龙虾',
+            tool: 'Skills/市场'
         };
 
         elements.categoryTabs.innerHTML = state.categories.map(cat => `
@@ -553,20 +406,13 @@
         }
 
         elements.emptyState.classList.add('hidden');
-        const isEn = state.currentLang === 'en';
-        const visitText = isEn ? 'Visit' : '访问';
-        const noDescText = isEn ? 'No description' : '暂无描述';
 
         elements.productsGrid.innerHTML = state.filteredProducts.map((product, index) => {
-            // Get localized description
-            const description = isEn && product.descriptionEn
-                ? product.descriptionEn
-                : product.description || noDescText;
+            // Get description
+            const description = product.description || '暂无描述';
 
-            // Get localized status
-            const status = product.status
-                ? (isEn ? getStatusTextEn(product.status) : product.status)
-                : '';
+            // Get status
+            const status = product.status || '';
 
             return `
             <a href="${product.installUrl || product.url}"
@@ -613,7 +459,7 @@
                     <!-- Action Button - Hidden on mobile -->
                     <span class="install-btn hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg
                               bg-claw-500 hover:bg-claw-600 text-white transition flex-shrink-0">
-                        ${visitText}
+                        访问
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
@@ -637,36 +483,22 @@
     }
 
     /**
-     * Get English status text
-     */
-    function getStatusTextEn(status) {
-        const statusMap = {
-            '可用': 'Available',
-            '已开源': 'Open Source',
-            '内测中': 'Beta',
-            '开发中': 'In Development'
-        };
-        return statusMap[status] || status;
-    }
-
-    /**
      * Get product type tag HTML
      * @param {Object} product - Product data
      * @returns {string} Tag HTML
      */
     function getProductTypeTag(product) {
-        const isEn = state.currentLang === 'en';
         const typeConfig = {
             opensource: {
-                label: isEn ? 'Open Source' : '开源',
+                label: '开源',
                 class: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300'
             },
             commercial: {
-                label: isEn ? 'Commercial' : '商业',
+                label: '商业',
                 class: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
             },
             tool: {
-                label: isEn ? 'Skills/Market' : 'Skills/市场',
+                label: 'Skills/市场',
                 class: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300'
             }
         };
