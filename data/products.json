@@ -3,7 +3,7 @@
     {
       "id": "openclaw",
       "name": "OpenClaw",
-      "icon": "https://openclaw.ai/favicon.ico",
+      "icon": "images/openclaw.png",
       "description": "原版龙虾，功能最完整的 AI Agent 开源项目，GitHub 历史星标第一",
       "descriptionEn": "Original Claw, the most complete AI Agent open-source project, #1 GitHub stars",
       "stars": "260K+",

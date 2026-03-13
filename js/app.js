@@ -341,7 +341,7 @@
 
         // Sort: OpenClaw first, then new products (飞书妙搭, DeskClaw, DuClaw),
         // then other commercial, then opensource, then tools
-        const newProductIds = ['miaoda', 'deskclaw', 'duclaw'];
+        const newProductIds = ['clawhub', 'miaoda', 'deskclaw', 'duclaw'];
         filtered.sort((a, b) => {
             if (a.id === 'openclaw') return -1;
             if (b.id === 'openclaw') return 1;
