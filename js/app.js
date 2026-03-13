@@ -636,25 +636,6 @@
         };
         return statusMap[status] || status;
     }
-                        </svg>
-                    </span>
-
-                    <!-- Mobile Arrow -->
-                    <svg class="sm:hidden w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </div>
-            </a>
-        `).join('');
-
-        // Render vote buttons for each product
-        state.filteredProducts.forEach(product => {
-            const container = document.querySelector(`[data-product-id="${product.id}"] .vote-container`);
-            if (container) {
-                renderVoteButtons(container, product.id);
-            }
-        });
-    }
 
     /**
      * Get product type tag HTML
