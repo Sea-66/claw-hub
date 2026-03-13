@@ -27,8 +27,8 @@ const i18n = {
             // Categories
             categories: {
                 all: '全部',
-                opensource: '开源版本',
-                commercial: '商业版本',
+                opensource: '开源龙虾',
+                commercial: '商业龙虾',
                 tool: 'Skills/市场'
             },
 
@@ -100,8 +100,8 @@ const i18n = {
             // Categories
             categories: {
                 all: 'All',
-                opensource: 'Open Source',
-                commercial: 'Commercial',
+                opensource: 'Open Source Lobster',
+                commercial: 'Commercial Lobster',
                 tool: 'Skills/Market'
             },
 

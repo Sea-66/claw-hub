@@ -500,8 +500,8 @@
         const isEn = state.currentLang === 'en';
         const categoryNames = {
             all: isEn ? 'All' : '全部',
-            opensource: isEn ? 'Open Source' : '开源版本',
-            commercial: isEn ? 'Commercial' : '商业版本',
+            opensource: isEn ? 'Open Source Lobster' : '开源龙虾',
+            commercial: isEn ? 'Commercial Lobster' : '商业龙虾',
             tool: isEn ? 'Skills/Market' : 'Skills/市场',
             ai: isEn ? 'AI Products' : 'AI产品'
         };
