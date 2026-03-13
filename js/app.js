@@ -37,6 +37,9 @@
      * Initialize the application
      */
     async function init() {
+        // Show loading state
+        elements.productsGrid.innerHTML = '<div class="text-center py-8"><span class="text-4xl">🦞</span><p class="text-gray-500 dark:text-gray-400 mt-2">加载中...</p></div>';
+
         // Initialize theme
         initTheme();
 
@@ -196,10 +199,13 @@
             const data = await ClawHubAPI.fetchProducts();
             state.products = data.products || [];
             state.categories = data.categories || [];
+            console.log('Loaded products:', state.products.length);
             updateStats();
         } catch (error) {
             console.error('Failed to load products:', error);
             state.products = [];
+            // Show error message
+            elements.productsGrid.innerHTML = '<div class="text-center py-8"><span class="text-4xl">❌</span><p class="text-red-500 mt-2">数据加载失败，请刷新页面重试</p><p class="text-gray-400 text-sm mt-1">请确保通过 HTTP 服务器访问此页面</p></div>';
         }
     }
 
