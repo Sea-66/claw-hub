@@ -233,6 +233,8 @@
         if (langText) {
             langText.textContent = state.currentLang === 'zh' ? 'EN' : '中文';
         }
+        // Also save to localStorage
+        localStorage.setItem('clawhub-lang', state.currentLang);
     }
 
     /**
@@ -246,7 +248,10 @@
      * Toggle language
      */
     function toggleLanguage() {
+        console.log('Toggle language called, current:', state.currentLang);
         state.currentLang = state.currentLang === 'zh' ? 'en' : 'zh';
+        console.log('New language:', state.currentLang);
+
         i18n.setLang(state.currentLang);
         updateLangButton();
         updateHtmlLang();
@@ -347,8 +352,14 @@
 
         // Language toggle
         const langToggle = document.getElementById('langToggle');
+        console.log('langToggle element:', langToggle);
         if (langToggle) {
-            langToggle.addEventListener('click', toggleLanguage);
+            langToggle.addEventListener('click', function(e) {
+                console.log('Language button clicked!');
+                toggleLanguage();
+            });
+        } else {
+            console.error('langToggle element not found!');
         }
 
         // Search inputs
