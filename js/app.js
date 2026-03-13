@@ -339,14 +339,16 @@
             });
         }
 
-        // Sort: OpenClaw first, then new products (飞书妙搭, DeskClaw, DuClaw),
+        // Sort: OpenClaw first, then ClawHub, then other featured products,
         // then other commercial, then opensource, then tools
-        const newProductIds = ['clawhub', 'miaoda', 'deskclaw', 'duclaw'];
+        const featuredProductIds = ['miaoda', 'deskclaw', 'duclaw'];
         filtered.sort((a, b) => {
             if (a.id === 'openclaw') return -1;
             if (b.id === 'openclaw') return 1;
-            if (newProductIds.includes(a.id) && !newProductIds.includes(b.id)) return -1;
-            if (newProductIds.includes(b.id) && !newProductIds.includes(a.id)) return 1;
+            if (a.id === 'clawhub') return -1;
+            if (b.id === 'clawhub') return 1;
+            if (featuredProductIds.includes(a.id) && !featuredProductIds.includes(b.id)) return -1;
+            if (featuredProductIds.includes(b.id) && !featuredProductIds.includes(a.id)) return 1;
             if (a.type === 'commercial' && b.type !== 'commercial') return -1;
             if (b.type === 'commercial' && a.type !== 'commercial') return 1;
             if (a.type === 'opensource' && b.type === 'tool') return -1;
