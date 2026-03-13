@@ -333,10 +333,14 @@
             });
         }
 
-        // Sort: OpenClaw first, then commercial, then other opensource, then tools
+        // Sort: OpenClaw first, then new products (飞书妙搭, DeskClaw, DuClaw),
+        // then other commercial, then opensource, then tools
+        const newProductIds = ['miaoda', 'deskclaw', 'duclaw'];
         filtered.sort((a, b) => {
             if (a.id === 'openclaw') return -1;
             if (b.id === 'openclaw') return 1;
+            if (newProductIds.includes(a.id) && !newProductIds.includes(b.id)) return -1;
+            if (newProductIds.includes(b.id) && !newProductIds.includes(a.id)) return 1;
             if (a.type === 'commercial' && b.type !== 'commercial') return -1;
             if (b.type === 'commercial' && a.type !== 'commercial') return 1;
             if (a.type === 'opensource' && b.type === 'tool') return -1;
@@ -414,13 +418,18 @@
             // Get status
             const status = product.status || '';
 
+            // Check if featured (OpenClaw)
+            const isFeatured = product.id === 'openclaw';
+            const featuredClass = isFeatured ? 'product-featured' : '';
+
             return `
             <a href="${product.installUrl || product.url}"
                target="_blank"
                rel="noopener noreferrer"
-               class="product-bar block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-3 sm:p-4 fade-in type-${product.type} cursor-pointer"
+               class="product-bar block bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md border border-gray-200 dark:border-gray-700 p-3 sm:p-4 fade-in type-${product.type} ${featuredClass} cursor-pointer"
                data-product-id="${product.id}"
                style="animation-delay: ${Math.min(index * 30, 300)}ms">
+                ${isFeatured ? '<span class="featured-badge">原版</span>' : ''}
                 <div class="flex items-center gap-2 sm:gap-4">
                     <!-- Vote Buttons - Hidden on mobile -->
                     <div class="vote-container hidden sm:flex flex-col items-center gap-1 flex-shrink-0" onclick="event.preventDefault(); event.stopPropagation();">

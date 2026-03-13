@@ -262,7 +262,7 @@
     {
       "id": "miaoda",
       "name": "飞书妙搭",
-      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>",
+      "icon": "images/feishu.ico",
       "description": "飞书云端部署 OpenClaw，一键部署到云端，自动接入飞书机器人，内置飞书官方插件",
       "company": "飞书",
       "type": "commercial",
@@ -274,7 +274,7 @@
     {
       "id": "deskclaw",
       "name": "DeskClaw",
-      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>",
+      "icon": "images/deskclaw.ico",
       "description": "AI 桌面同事，能像真人一样操作浏览器、读写文件，本地优先架构，SkillsHub 技能生态",
       "company": "DeskClaw",
       "type": "commercial",
@@ -286,7 +286,7 @@
     {
       "id": "duclaw",
       "name": "DuClaw",
-      "icon": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>",
+      "icon": "images/baidu.png",
       "description": "百度智能云 7x24 小时在线个人超级助理，零部署官方托管模式，预置百度搜索等技能",
       "company": "百度智能云",
       "type": "commercial",
