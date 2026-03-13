@@ -230,16 +230,24 @@ html {
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
+    /* Ensure main content area is visible */
+    main {
+        display: block !important;
+        visibility: visible !important;
+    }
+
     /* Ensure products grid is visible */
     #productsGrid {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         min-height: 100px;
+        visibility: visible !important;
     }
 
     /* Ensure product cards are visible */
     .product-bar {
         display: flex !important;
+        visibility: visible !important;
         padding: 0.75rem;
     }
 

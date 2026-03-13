@@ -409,6 +409,8 @@
      * Render products list
      */
     function renderProducts() {
+        console.log('renderProducts called, filtered products:', state.filteredProducts.length);
+
         if (state.filteredProducts.length === 0) {
             elements.productsGrid.innerHTML = '';
             elements.emptyState.classList.remove('hidden');
@@ -416,6 +418,7 @@
         }
 
         elements.emptyState.classList.add('hidden');
+        console.log('Rendering products to grid...');
 
         elements.productsGrid.innerHTML = state.filteredProducts.map((product, index) => {
             // Get description
