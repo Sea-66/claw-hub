@@ -1,0 +1,6 @@
+name = "claw-hub"
+main = "index.html"
+compatibility_date = "2026-03-13"
+
+[site]
+bucket = "."
