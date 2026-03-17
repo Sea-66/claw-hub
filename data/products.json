@@ -322,6 +322,19 @@
       "tags": ["技能市场", "社区", "进化"],
       "url": "https://openclawmp.cc/",
       "installUrl": "https://openclawmp.cc/"
+    },
+    {
+      "id": "skillhub",
+      "name": "SkillHub",
+      "icon": "https://skillhub.tencent.com/favicon.ico",
+      "description": "腾讯出品专为中国用户优化的 AI Skills 社区，精选 TOP 50 技能，高速下载体验",
+      "descriptionEn": "By Tencent, AI Skills community optimized for Chinese users, TOP 50 skills, high-speed download",
+      "company": "腾讯",
+      "companyEn": "Tencent",
+      "type": "tool",
+      "tags": ["技能市场", "腾讯", "加速下载"],
+      "url": "https://skillhub.tencent.com/",
+      "installUrl": "https://skillhub.tencent.com/"
     }
   ],
   "categories": [
