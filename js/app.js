@@ -448,9 +448,9 @@
                     </div>
 
                     <!-- Icon -->
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-white overflow-hidden flex-shrink-0">
+                    <div class="${isFeatured ? 'w-14 h-14 sm:w-16 sm:h-16' : 'w-10 h-10 sm:w-12 sm:h-12'} flex items-center justify-center rounded-lg bg-white overflow-hidden flex-shrink-0">
                         ${product.icon
-                            ? `<img src="${product.icon}" alt="${product.name}" class="w-6 h-6 sm:w-8 sm:h-8 object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-xl sm:text-2xl hidden items-center justify-center">🦞</span>`
+                            ? `<img src="${product.icon}" alt="${product.name}" class="${isFeatured ? 'w-10 h-10 sm:w-12 sm:h-12' : 'w-6 h-6 sm:w-8 sm:h-8'} object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="text-xl sm:text-2xl hidden items-center justify-center">🦞</span>`
                             : `<span class="text-xl sm:text-2xl">🦞</span>`
                         }
                     </div>
